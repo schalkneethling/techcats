@@ -1,5 +1,5 @@
-<button id="add-techcat" type="button" class="primary-button add-techcat" aria-haspopup="true" aria-expanded="false">Add
-  Your
+<button id="add-techcat" type="button" class="primary-button add-techcat" aria-expanded="false"
+  aria-haspopup="dialog">Add Your
   TechCat</button>
 
 <dialog id="add-techcat-dialog" class="add-techcat-dialog">
@@ -167,8 +167,18 @@
   const trigger = document.getElementById('add-techcat');
   const dialog = document.getElementById('add-techcat-dialog');
 
+  function updateAriaExpanded() {
+    const nextExpandedState = trigger.getAttribute("aria-expanded") === "false" ? "true" : "false";
+    trigger.setAttribute("aria-expanded", nextExpandedState);
+  }
+
   trigger.addEventListener('click', () => {
+    updateAriaExpanded();
     dialog.showModal();
+  });
+
+  dialog.addEventListener('close', () => {
+    updateAriaExpanded();
   });
 
   addTechcatForm.addEventListener('submit', async (event) => {
