@@ -1,0 +1,69 @@
+<header class="page-header">
+  <h1>TechCats</h1>
+  <p class="subtitle">The cats of people who make websites</p>
+</header>
+
+<style>
+  .page-header {
+    --globe-size-block: 91px;
+    --globe-size-inline: 150px;
+    --globe-inset-block-end: -1.5rem;
+    --globe-inset-inline-end: 1rem;
+
+    display: grid;
+    margin: 0 auto;
+    max-inline-size: var(--max-container-inline-size);
+    padding-block-end: var(--size-32);
+    place-items: center;
+    position: relative;
+
+    &::after {
+      background: transparent url("/assets/primary-planet.svg") 100% 100% no-repeat;
+      background-size: contain;
+      block-size: var(--globe-size-block);
+      content: "";
+      display: block;
+      inline-size: var(--globe-size-inline);
+      inset-block-end: var(--globe-inset-block-end);
+      inset-inline-end: var(--globe-inset-inline-end);
+      position: absolute;
+    }
+
+    h1 {
+      color: var(--color-primary-brown);
+      font-family: var(--typography-logo);
+      font-size: var(--typography-font-size-logo);
+      margin-block-start: 0;
+    }
+
+    .subtitle {
+      line-height: 1.2;
+      margin: 0;
+      position: relative;
+    }
+
+    @media screen and (width < 48rem) {
+      .subtitle {
+        inset: -1rem -1rem;
+        max-inline-size: 14rem;
+        text-align: left;
+      }
+    }
+
+    @media screen and (width >=48rem) {
+      .subtitle {
+        font-size: var(--typography-font-size-medium);
+        inset: -2rem -3rem;
+        max-inline-size: 24rem;
+      }
+    }
+  }
+
+  @media screen and (width >=48rem) {
+    .page-header {
+      --globe-size-block: 170px;
+      --globe-size-inline: 280px;
+      --globe-inset-block-end: -4.5rem;
+    }
+  }
+</style>

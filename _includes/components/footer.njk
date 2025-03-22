@@ -1,0 +1,78 @@
+<footer class="page-footer">
+  <ul class="footer-links">
+    <li><a class="contribute-github" href="https://github.com/schalkneethling/techcats">Contribute on GitHub</a></li>
+    <li>2025 &mdash; Maintained by <a href="https://schalkneethling.com">Schalk Neethling</a> and contributors</li>
+  </ul>
+</footer>
+
+<style>
+  .page-footer {
+    --kitty-block-size: 3.9375rem;
+    --kitty-inline-size: 3.3125rem;
+
+    --globe-size-block: 102px;
+    --globe-size-inline: 120px;
+    --globe-inset-block-start: -5rem;
+    --globe-inset-inline-start: 4vw;
+
+    position: relative;
+    z-index: var(--bottom-layer);
+
+    &::after {
+      background: transparent url("/assets/secondary-planet.svg") 100% 100% no-repeat;
+      background-size: contain;
+      block-size: var(--globe-size-block);
+      content: "";
+      display: block;
+      inline-size: var(--globe-size-inline);
+      inset-block-start: var(--globe-inset-block-start);
+      inset-inline-start: var(--globe-inset-inline-start);
+      position: absolute;
+      z-index: var(--bring-to-front);
+    }
+
+    .contribute-github {
+      display: grid;
+      place-items: center;
+    }
+
+    .contribute-github::before {
+      background: transparent url("/assets/kitty.svg") center center no-repeat;
+      block-size: var(--kitty-block-size);
+      content: "";
+      display: block;
+      inline-size: var(--kitty-inline-size);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: var(--size-24);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  @media screen and (width < 48rem) {
+    .page-footer {
+      padding-block: var(--size-48);
+      padding-inline: var(--size-16);
+    }
+  }
+
+  @media screen and (width >=48rem) {
+    .page-footer {
+      --globe-size-block: 145px;
+      --globe-size-inline: 170px;
+      padding-block: var(--size-32);
+      padding-inline: var(--size-16);
+    }
+  }
+
+  @media screen and (width >=90rem) {
+    .page-footer {
+      --globe-inset-inline-start: 7vw;
+    }
+  }
+</style>

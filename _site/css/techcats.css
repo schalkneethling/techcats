@@ -1,0 +1,55 @@
+@font-face {
+  font-display: swap;
+  font-family: pacifico;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/typography/Pacifico-Regular.woff2") format("woff2");
+}
+
+:root {
+  --color-light-green: #caefd7;
+  --color-light-purple: #c7bff5;
+  --color-light-blue: #abc9e9;
+
+  --color-primary-brown: #30140c;
+  --color-primary-highlight: #feb769;
+
+  --color-neutral-inverted: #fff3ef;
+
+  --color-page-gradient: linear-gradient(
+    to bottom,
+    var(--color-light-green) 0%,
+    var(--color-light-purple) 50%,
+    var(--color-light-blue) 100%
+  );
+
+  --minimalist-typography-scale-mobile: 1.25;
+
+  /* reduced line height for interactive elements */
+  --minimalist-typography-interactive-line-height: 1.1;
+
+  --typography-display-fallback:
+    "Segoe Print", "Bradley Hand", chilanka, casual, cursive;
+  --typography-display-primary: pacifico;
+  --typography-logo:
+    var(--typography-display-primary), var(--typography-display-fallback);
+
+  --typography-font-size-logo: 4.875rem;
+}
+
+@media screen and (width >= 48rem) {
+  :root {
+    --typography-font-size-logo: 8.875rem;
+  }
+}
+
+body {
+  background: var(--color-page-gradient);
+  color: var(--color-primary-brown);
+}
+
+img {
+  block-size: auto;
+  display: block;
+  max-inline-size: 100%;
+}

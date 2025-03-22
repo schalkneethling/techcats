@@ -1,0 +1,118 @@
+<ul class="techcats-list-container">
+  {% for entry in cats %}
+  {% set currentCat = entry.techcat %}
+  <li class="techcats-list-entry">
+    <a href="profile/{{ entry.id }}/{{ currentCat.name | slugify }}" class="techcats-entry-name">
+      <figure>
+        <img class="techcats-entry-image" height="{{ currentCat.photo.height }}" src="{{ currentCat.photo.src }}"
+          width="{{ currentCat.photo.width }}" alt="{{ currentCat.photo.alt }}">
+        <figcaption>
+          {{ currentCat.name }}
+        </figcaption>
+      </figure>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<style>
+  .techcats-list-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-16);
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    max-inline-size: var(--max-container-inline-size);
+    padding-inline: 0;
+    position: relative;
+    z-index: var(--bottom-layer);
+  }
+
+  .techcats-list-entry {
+    flex: 1 1 28.125em;
+
+    figure {
+      display: grid;
+      gap: var(--size-16);
+      place-items: center;
+    }
+
+    figcaption {
+      font-size: var(--typography-font-size-small-medium);
+      text-align: center;
+    }
+  }
+
+  .techcats-entry-image {
+    block-size: auto;
+    border-radius: 50%;
+  }
+
+  @media screen and (width < 48rem) {
+    .techcats-list-container {
+      background-color: var(--color-primary-surface-mobile);
+      padding-block: var(--size-48);
+    }
+
+    .techcats-list-entry {
+      flex: 1 1 28.125em;
+    }
+
+    .techcats-entry-image {
+      inline-size: 28.125em;
+    }
+  }
+
+  @media screen and (width >=48rem) {
+    .techcats-list-container {
+      background-color: var(--color-primary-surface);
+      border-radius: var(--border-radius-container);
+      padding: var(--size-48);
+      padding-block-start: var(--size-112);
+    }
+
+    .techcats-list-entry {
+      flex: 1 1 21.875em;
+    }
+
+    .techcats-entry-image {
+      inline-size: 21.875em;
+    }
+  }
+
+  @media screen and (width >=64rem) {
+    .techcats-list-container {
+      --spacecat-size-block: 21.625rem;
+      --spacecat-size-inline: 18.75rem;
+      --spacecat-inset-block-start: -18rem;
+      --spacecat-inset-inline-start: 0;
+
+      position: relative;
+      z-index: var(--bottom-layer);
+
+      &::before {
+        background: transparent url("/assets/space-cat.svg") 100% 100% no-repeat;
+        background-size: contain;
+        block-size: var(--spacecat-size-block);
+        content: "";
+        display: block;
+        inline-size: var(--spacecat-size-inline);
+        inset-block-start: var(--spacecat-inset-block-start);
+        inset-inline-start: var(--spacecat-inset-inline-start);
+        position: absolute;
+        z-index: var(--bring-to-front);
+      }
+    }
+  }
+
+  @media screen and (width >=83.5rem) {
+    .techcats-list-container {
+      --spacecat-size-block: 27.375rem;
+      --spacecat-size-inline: 31.562rem;
+      --spacecat-inset-block-start: -21rem;
+      --spacecat-inset-inline-start: -5rem;
+    }
+  }
+</style>

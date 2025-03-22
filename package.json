@@ -1,0 +1,33 @@
+{
+  "name": "techcats",
+  "description": "The cats of people who make websites",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prettier:lint": "prettier .",
+    "prettier:format": "prettier --write .",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint **/*.css"
+  },
+  "keywords": [
+    "website",
+    "cats",
+    "community",
+    "11ty"
+  ],
+  "author": "Schalk Neethling",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^6.0.1",
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.2",
+    "stylelint": "^16.15.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-order": "^6.0.4"
+  }
+}

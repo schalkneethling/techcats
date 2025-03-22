@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechCats ~ The cats of people who make websites</title>
+  <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="/css/techcats.css" media="screen">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header class="page-header">
+  <h1>TechCats</h1>
+  <p class="subtitle">The cats of people who make websites</p>
+</header>
+
+<style>
+  .page-header {
+    --globe-size-block: 91px;
+    --globe-size-inline: 150px;
+    --globe-inset-block-end: -1.5rem;
+    --globe-inset-inline-end: 1rem;
+
+    display: grid;
+    margin: 0 auto;
+    max-inline-size: var(--max-container-inline-size);
+    padding-block-end: var(--size-32);
+    place-items: center;
+    position: relative;
+
+    &::after {
+      background: transparent url("/assets/primary-planet.svg") 100% 100% no-repeat;
+      background-size: contain;
+      block-size: var(--globe-size-block);
+      content: "";
+      display: block;
+      inline-size: var(--globe-size-inline);
+      inset-block-end: var(--globe-inset-block-end);
+      inset-inline-end: var(--globe-inset-inline-end);
+      position: absolute;
+    }
+
+    h1 {
+      color: var(--color-primary-brown);
+      font-family: var(--typography-logo);
+      font-size: var(--typography-font-size-logo);
+      margin-block-start: 0;
+    }
+
+    .subtitle {
+      line-height: 1.2;
+      margin: 0;
+      position: relative;
+    }
+
+    @media screen and (width < 48rem) {
+      .subtitle {
+        inset: -1rem -1rem;
+        max-inline-size: 14rem;
+        text-align: left;
+      }
+    }
+
+    @media screen and (width >=48rem) {
+      .subtitle {
+        font-size: var(--typography-font-size-medium);
+        inset: -2rem -3rem;
+        max-inline-size: 24rem;
+      }
+    }
+  }
+
+  @media screen and (width >=48rem) {
+    .page-header {
+      --globe-size-block: 170px;
+      --globe-size-inline: 280px;
+      --globe-inset-block-end: -4.5rem;
+    }
+  }
+</style>
+
+
+    <main>
+      
+<div class="techcats-profile-container">
+  <div class="techcat-profile-image">
+    <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fnibbles.jpg&width=900&format=webp&via=transform 900w"><img class="techcats-photo" src="/.11ty/image/?src=assets%2Fcats%2Fnibbles.jpg&width=900&format=jpeg&via=transform" height="900" width="900" alt="Nibbles the cat"></picture>
+  </div>
+  <div class="primary-content-container">
+    <section aria-labelledby="section-techcat-profile" class="techcat-profile-details">
+      <h1 class="techcat-profile-name" id="section-techcat-profile">Nibbles</h1>
+      <p>Nibbles is a cybersecurity expert, always testing the physical integrity of cables and headphone wires with his teeth. His passion for encryption is unmatched—he somehow manages to lock my laptop with a single well-placed paw press.</p>
+    </section>
+    <section aria-labelledby="section-techcat-caretaker" class="techcat-profile-caretaker">
+      <hgroup id="section-techcat-caretaker">
+        <h2>Caretaker</h2>
+        <p class="techcat-profile-caretaker-name">Taylor Brooks</p>
+      </hgroup>
+      <ul class="reset-list techcat-profile-caretaker-links">
+        
+        <li class="links-entry website">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+            <path fill="#30140C" d="M31.659.34a1.165 1.165 0 0 1 .24 1.299L18.712 31.308a1.165 1.165 0 0 1-2.137-.017l-4.758-11.11-11.112-4.76a1.165 1.165 0 0 1-.014-2.134L30.361.1a1.166 1.166 0 0 1 1.298.24Z"></path>
+          </svg>
+          <a href="https://taylorbrooks.dev">taylorbrooks.dev</a>
+        </li>
+        
+        
+        <li class="links-entry social">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+            <path fill="#30140C" d="M22.805 24.39c4.3-.48 8.042-2.95 8.511-5.206.743-3.556.683-8.678.683-8.678 0-6.94-4.877-8.976-4.877-8.976C24.665.476 20.443.034 16.057 0h-.107C11.562.034 7.343.476 4.885 1.53c0 0-4.874 2.034-4.874 8.976L.006 11.83c-.008 1.28-.014 2.7.024 4.182.177 6.789 1.335 13.48 8.064 15.14 3.101.767 5.766.927 7.912.817 3.889-.2 6.073-1.294 6.073-1.294l-.128-2.634s-2.78.82-5.902.72c-3.094-.1-6.358-.312-6.859-3.856a7.51 7.51 0 0 1-.07-.992s3.038.692 6.886.856c2.353.1 4.559-.128 6.8-.378h-.002Zm3.44-4.94h-3.569v-8.16c0-1.718-.776-2.59-2.327-2.59-1.715 0-2.575 1.034-2.575 3.082v4.466h-3.55V11.78c0-2.048-.86-3.082-2.574-3.082-1.551 0-2.328.872-2.328 2.592v8.159H5.753v-8.405c0-1.717.47-3.081 1.408-4.092.973-1.01 2.245-1.528 3.825-1.528 1.826 0 3.209.656 4.124 1.966L16 8.78l.889-1.39c.915-1.31 2.297-1.966 4.126-1.966 1.578 0 2.85.518 3.82 1.528.942 1.01 1.412 2.374 1.41 4.092v8.407Z"></path>
+          </svg>
+          <a href="https://hachyderm.io/@taylorbrooks">hachyderm.io/@taylorbrooks</a>
+        </li>
+        
+        
+        <li class="links-entry github">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+            <g clip-path="url(#a)">
+              <path fill="#30140C" d="M16 0C7.16 0 0 7.16 0 16c0 7.08 4.58 13.06 10.94 15.18.8.14 1.1-.34 1.1-.76 0-.38-.02-1.64-.02-2.98-4.02.74-5.06-.98-5.38-1.88-.18-.46-.96-1.88-1.64-2.26-.56-.3-1.36-1.04-.02-1.06 1.26-.02 2.16 1.16 2.46 1.64 1.44 2.42 3.74 1.74 4.66 1.32.14-1.04.56-1.74 1.02-2.14-3.56-.4-7.28-1.78-7.28-7.9 0-1.74.62-3.18 1.64-4.3-.16-.4-.72-2.04.16-4.24 0 0 1.34-.42 4.4 1.64 1.28-.36 2.64-.54 4-.54 1.36 0 2.72.18 4 .54 3.06-2.08 4.4-1.64 4.4-1.64.88 2.2.32 3.84.16 4.24 1.02 1.12 1.64 2.54 1.64 4.3 0 6.14-3.74 7.5-7.3 7.9.58.5 1.08 1.46 1.08 2.96 0 2.14-.02 3.86-.02 4.4 0 .42.3.92 1.1.76A16.02 16.02 0 0 0 32 16c0-8.84-7.16-16-16-16Z"></path>
+            </g>
+            <defs>
+              <clipPath id="a">
+                <path fill="#fff" d="M0 0h32v32H0z"></path>
+              </clipPath>
+            </defs>
+          </svg>
+          <a href="https://github.com/taylorbrooks">github.com/taylorbrooks</a>
+        </li>
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+<style>
+  .techcats-profile-container {
+    background-color: var(--container-background-color);
+    display: grid;
+    max-inline-size: var(--max-container-inline-size);
+    padding-block: var(--size-48);
+    padding-inline: var(--size-16);
+    position: relative;
+    z-index: var(--bottom-layer);
+  }
+
+  .techcats-photo {
+    block-size: auto;
+    border-radius: 50%;
+  }
+
+  .techcat-profile-details p:first-of-type,
+  .techcat-profile-caretaker p:first-of-type {
+    margin-block-start: 0;
+  }
+
+  .techcat-profile-name {
+    margin-block-start: 0;
+  }
+
+  .links-entry {
+    display: flex;
+    gap: var(--size-8);
+
+    svg {
+      flex: 0 0 var(--icon-size);
+    }
+
+    a {
+      display: block;
+      overflow: hidden;
+    }
+  }
+
+  @media screen and (width < 48rem) {
+    .techcats-profile-container {
+      --container-background-color: var(--color-primary-surface-mobile);
+    }
+  }
+  
+  @media screen and (width >= 48rem) {
+    .techcats-profile-container {
+      --container-background-color: var(--color-primary-surface);
+      border-radius: var(--border-radius-container);
+      padding: var(--size-48);
+    }
+  }
+
+  @media screen and (width >=64rem) {
+    .techcats-profile-container {
+      background-color: var(--color-primary-surface);
+      display: flex;
+      gap: var(--size-32);
+    }
+
+    .techcat-profile-image {
+      flex: 1 0 28.125rem;
+    }
+
+    .techcat-profile-details {
+      flex: 1 1 59.375rem;
+    }
+  }
+</style>
+
+    </main>
+
+  </div>
+  <footer class="page-footer">
+  <ul class="footer-links">
+    <li><a class="contribute-github" href="https://github.com/schalkneethling/techcats">Contribute on GitHub</a></li>
+    <li>2025 &mdash; Maintained by <a href="https://schalkneethling.com">Schalk Neethling</a> and contributors</li>
+  </ul>
+</footer>
+
+<style>
+  .page-footer {
+    --kitty-block-size: 3.9375rem;
+    --kitty-inline-size: 3.3125rem;
+
+    --globe-size-block: 102px;
+    --globe-size-inline: 120px;
+    --globe-inset-block-start: -5rem;
+    --globe-inset-inline-start: 4vw;
+
+    position: relative;
+    z-index: var(--bottom-layer);
+
+    &::after {
+      background: transparent url("/assets/secondary-planet.svg") 100% 100% no-repeat;
+      background-size: contain;
+      block-size: var(--globe-size-block);
+      content: "";
+      display: block;
+      inline-size: var(--globe-size-inline);
+      inset-block-start: var(--globe-inset-block-start);
+      inset-inline-start: var(--globe-inset-inline-start);
+      position: absolute;
+      z-index: var(--bring-to-front);
+    }
+
+    .contribute-github {
+      display: grid;
+      place-items: center;
+    }
+
+    .contribute-github::before {
+      background: transparent url("/assets/kitty.svg") center center no-repeat;
+      block-size: var(--kitty-block-size);
+      content: "";
+      display: block;
+      inline-size: var(--kitty-inline-size);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: var(--size-24);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  @media screen and (width < 48rem) {
+    .page-footer {
+      padding-block: var(--size-48);
+      padding-inline: var(--size-16);
+    }
+  }
+
+  @media screen and (width >=48rem) {
+    .page-footer {
+      --globe-size-block: 145px;
+      --globe-size-inline: 170px;
+      padding-block: var(--size-32);
+      padding-inline: var(--size-16);
+    }
+  }
+
+  @media screen and (width >=90rem) {
+    .page-footer {
+      --globe-inset-inline-start: 7vw;
+    }
+  }
+</style>
+
+</body>
+
+</html>
