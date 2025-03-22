@@ -4,7 +4,7 @@
     "techcat": {
       "name": "Luna",
       "bio": "Luna is the undisputed queen of my home office, overseeing every keystroke and ensuring I stay on task (or at least take frequent cuddle breaks). As a dedicated bug hunter—both in code and in real life—she has an uncanny ability to appear just as I'm debugging, offering her own feline wisdom by sitting directly on my keyboard.",
-      "passed": false,
+      "in_memoriam": false,
       "photo": {
         "alt": "Luna the cat",
         "height": 450,
@@ -26,7 +26,7 @@
     "techcat": {
       "name": "Milo",
       "bio": "Milo is the ultimate pair-programming companion, always perched on my shoulder as I write code. His favorite activity is watching the terminal scroll, convinced that the lines of code are his personal cat TV. When he's not supervising my work, he's busy batting at stray USB cables like they're his sworn enemies.",
-      "passed": false,
+      "in_memoriam": false,
       "photo": {
         "alt": "Milo the cat",
         "height": 450,
@@ -48,7 +48,7 @@
     "techcat": {
       "name": "Whiskerpuff",
       "bio": "Whiskerpuff takes his job as a cloud engineer very seriously—mostly by napping on my router and ensuring maximum uptime with his fluffy presence. He's also the chief QA tester, often walking across my keyboard to introduce surprise 'features' into my code.",
-      "passed": false,
+      "in_memoriam": false,
       "photo": {
         "alt": "Whiskerpuff the cat",
         "height": 450,
@@ -70,7 +70,7 @@
     "techcat": {
       "name": "Pudding",
       "bio": "Pudding is a full-stack mischief-maker, equally skilled at swatting at front-end UI elements and stealing warm laptop spots. She has an impeccable sense of timing, always demanding attention the moment an important meeting starts.",
-      "passed": false,
+      "in_memoriam": false,
       "photo": {
         "alt": "Pudding the cat",
         "height": 450,
@@ -92,7 +92,7 @@
     "techcat": {
       "name": "Nibbles",
       "bio": "Nibbles is a cybersecurity expert, always testing the physical integrity of cables and headphone wires with his teeth. His passion for encryption is unmatched—he somehow manages to lock my laptop with a single well-placed paw press.",
-      "passed": false,
+      "in_memoriam": false,
       "photo": {
         "alt": "Nibbles the cat",
         "height": 450,
@@ -114,7 +114,7 @@
     "techcat": {
       "name": "Marshmallow",
       "bio": "Marshmallow believes in a balanced work-life approach, reminding me to take breaks by curling up on my lap for enforced cuddle time. He has a special talent for finding the coziest spots in the office, usually right on top of my mechanical keyboard.",
-      "passed": false,
+      "in_memoriam": false,
       "photo": {
         "alt": "Marshmallow the cat",
         "height": 450,

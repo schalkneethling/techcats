@@ -1,21 +1,30 @@
-<ul class="techcats-list-container">
-  {% for entry in cats %}
-  {% set currentCat = entry.techcat %}
-  <li class="techcats-list-entry">
-    <a href="profile/{{ entry.id }}/{{ currentCat.name | slugify }}" class="techcats-entry-name">
-      <figure>
-        <img class="techcats-entry-image" height="{{ currentCat.photo.height }}" src="{{ currentCat.photo.src }}"
-          width="{{ currentCat.photo.width }}" alt="{{ currentCat.photo.alt }}">
-        <figcaption>
-          {{ currentCat.name }}
-        </figcaption>
-      </figure>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+<div class="techcats-list-wrapper">
+  {% include "./add-techcat.njk" %}
+  <ul class="techcats-list-container">
+    {% for entry in cats %}
+    {% set currentCat = entry.techcat %}
+    <li class="techcats-list-entry">
+      <a href="profile/{{ entry.id }}/{{ currentCat.name | slugify }}" class="techcats-entry-name">
+        <figure>
+          <img class="techcats-entry-image" height="{{ currentCat.photo.height }}" src="{{ currentCat.photo.src }}"
+            width="{{ currentCat.photo.width }}" alt="{{ currentCat.photo.alt }}">
+          <figcaption>
+            {{ currentCat.name }}
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 
 <style>
+  .techcats-list-wrapper {
+    display: grid;
+    padding: var(--size-48);
+    z-index: var(--bring-to-front);
+  }
+
   .techcats-list-container {
     align-items: center;
     display: flex;
@@ -51,7 +60,7 @@
   }
 
   @media screen and (width < 48rem) {
-    .techcats-list-container {
+    .techcats-list-wrapper {
       background-color: var(--color-primary-surface-mobile);
       padding-block: var(--size-48);
     }
@@ -66,11 +75,9 @@
   }
 
   @media screen and (width >=48rem) {
-    .techcats-list-container {
+    .techcats-list-wrapper {
       background-color: var(--color-primary-surface);
       border-radius: var(--border-radius-container);
-      padding: var(--size-48);
-      padding-block-start: var(--size-112);
     }
 
     .techcats-list-entry {
@@ -83,7 +90,7 @@
   }
 
   @media screen and (width >=64rem) {
-    .techcats-list-container {
+    .techcats-list-wrapper {
       --spacecat-size-block: 21.625rem;
       --spacecat-size-inline: 18.75rem;
       --spacecat-inset-block-start: -18rem;
@@ -108,7 +115,7 @@
   }
 
   @media screen and (width >=83.5rem) {
-    .techcats-list-container {
+    .techcats-list-wrapper {
       --spacecat-size-block: 27.375rem;
       --spacecat-size-inline: 31.562rem;
       --spacecat-inset-block-start: -21rem;

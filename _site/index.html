@@ -24,6 +24,7 @@
     --globe-inset-inline-end: 1rem;
 
     display: grid;
+    gap: var(--size-16);
     margin: 0 auto;
     max-inline-size: var(--max-container-inline-size);
     padding-block-end: var(--size-32);
@@ -84,83 +85,283 @@
 
     <main>
       
-<ul class="techcats-list-container">
-  
-  
-  <li class="techcats-list-entry">
-    <a href="profile/1/luna" class="techcats-entry-name">
-      <figure>
-        <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=450&format=jpeg&via=transform" width="450" alt="Luna the cat"></picture>
-        <figcaption>
-          Luna
-        </figcaption>
-      </figure>
-    </a>
-  </li>
-  
-  
-  <li class="techcats-list-entry">
-    <a href="profile/2/milo" class="techcats-entry-name">
-      <figure>
-        <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fmilo.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fmilo.jpg&width=450&format=jpeg&via=transform" width="450" alt="Milo the cat"></picture>
-        <figcaption>
-          Milo
-        </figcaption>
-      </figure>
-    </a>
-  </li>
-  
-  
-  <li class="techcats-list-entry">
-    <a href="profile/3/whiskerpuff" class="techcats-entry-name">
-      <figure>
-        <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fwhiskerpuff.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fwhiskerpuff.jpg&width=450&format=jpeg&via=transform" width="450" alt="Whiskerpuff the cat"></picture>
-        <figcaption>
-          Whiskerpuff
-        </figcaption>
-      </figure>
-    </a>
-  </li>
-  
-  
-  <li class="techcats-list-entry">
-    <a href="profile/4/pudding" class="techcats-entry-name">
-      <figure>
-        <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fpudding.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fpudding.jpg&width=450&format=jpeg&via=transform" width="450" alt="Pudding the cat"></picture>
-        <figcaption>
-          Pudding
-        </figcaption>
-      </figure>
-    </a>
-  </li>
-  
-  
-  <li class="techcats-list-entry">
-    <a href="profile/5/nibbles" class="techcats-entry-name">
-      <figure>
-        <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fnibbles.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fnibbles.jpg&width=450&format=jpeg&via=transform" width="450" alt="Nibbles the cat"></picture>
-        <figcaption>
-          Nibbles
-        </figcaption>
-      </figure>
-    </a>
-  </li>
-  
-  
-  <li class="techcats-list-entry">
-    <a href="profile/6/marshmallow" class="techcats-entry-name">
-      <figure>
-        <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fmarshmallow.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fmarshmallow.jpg&width=450&format=jpeg&via=transform" width="450" alt="Marshmallow the cat"></picture>
-        <figcaption>
-          Marshmallow
-        </figcaption>
-      </figure>
-    </a>
-  </li>
-  
-</ul>
+<div class="techcats-list-wrapper">
+  <button id="add-techcat" type="button" class="primary-button add-techcat" aria-haspopup="true" aria-expanded="false">Add
+  Your
+  TechCat</button>
+
+<dialog id="add-techcat-dialog" class="add-techcat-dialog">
+  <form class="close-dialog-form" method="dialog">
+    <button type="submit" class="close-dialog">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"></path>
+      </svg>
+      <span class="visually-hidden">Close dialog</span>
+    </button>
+  </form>
+
+  <div class="dialog-content-wrapper">
+    <h2 class="dialog-title">Add Your TechCat</h2>
+    <form id="add-techcat-form" name="add-techcat" method="post">
+      <fieldset>
+        <legend>Techcat Details</legend>
+
+        <div class="form-field">
+          <label for="techcat-name">Your Techcat's Name</label>
+          <input type="text" name="techcat-name" id="techcat-name" required="">
+        </div>
+
+        <div class="form-field-horizontal">
+          <input type="checkbox" name="techcat-memoriam" id="techcat-memoriam">
+          <label for="techcat-memoriam">In Memoriam? (optional)</label>
+        </div>
+
+        <div class="form-field">
+          <label for="techcat-about">Your Techcat's Bio</label>
+          <textarea name="techcat-about" id="techcat-about" cols="30" rows="10" required=""></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="techcat-photo">Photo URL (must be public, will <em>not</em> be used for hot linking)</label>
+          <input type="url" name="techcat-photo" id="techcat-photo" required="">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Caretaker Details</legend>
+        <div class="form-field">
+          <label for="caretaker-name">Caretaker Name</label>
+          <input type="text" name="caretaker-name" id="caretaker-name" required="">
+        </div>
+
+        <div class="form-field">
+          <label for="caretaker-website">Your website (optional)</label>
+          <input type="url" name="caretaker-website" id="caretaker-website">
+        </div>
+
+        <div class="form-field">
+          <label for="caretaker-social">On socials? (optional)</label>
+          <input type="url" name="caretaker-social" id="caretaker-social">
+        </div>
+
+        <div class="form-field">
+          <label for="caretaker-github">On GitHub? (optional)</label>
+          <input type="url" name="caretaker-github" id="caretaker-github">
+        </div>
+      </fieldset>
+      <button class="primary-button" type="submit">Add Your TechCat</button>
+    </form>
+  </div>
+</dialog>
 
 <style>
+  .primary-button,
+  .close-dialog {
+    cursor: pointer;
+  }
+
+
+  .primary-button {
+    background-color: var(--color-primary-brown);
+    border: var(--size-8) solid var(--color-primary-highlight);
+    border-radius: var(--size-48);
+    color: var(--color-neutral-inverted);
+    display: block;
+    font-size: var(--typography-font-size-small-medium);
+    inline-size: max-content;
+    justify-self: end;
+    margin-block-end: var(--size-48);
+    padding-block: var(--size-16);
+    padding-inline: var(--size-32);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-secondary-brown);
+    }
+  }
+
+  .close-dialog {
+    appearance: none;
+    background: none;
+    border: none;
+
+    svg {
+      block-size: calc(var(--icon-size) * 2);
+      inline-size: calc(var(--icon-size) * 2);
+    }
+  }
+
+  .add-techcat-dialog:open {
+    display: grid;
+    border: var(--size-2) solid var(--color-primary-brown);
+    grid-template-rows: auto 1fr;
+    padding-block: var(--size-16);
+    padding-inline: var(--size-32);
+
+    &::backdrop {
+      background-color: var(--color-backdrop);
+    }
+
+    .close-dialog-form {
+      justify-self: end;
+    }
+
+    .dialog-title {
+      margin: 0;
+    }
+
+    fieldset {
+      border: none;
+      margin-block-start: var(--size-16);
+      padding: 0;
+    }
+
+    legend {
+      font-size: var(--typography-font-size-medium);
+      margin-block-end: var(--size-16);
+    }
+  }
+
+  @media screen and (width < 48rem) {
+    .primary-button.add-techcat {
+      inline-size: 100%;
+    }
+
+    .add-techcat-dialog {
+      block-size: 100vh;
+      inline-size: 100vw;
+    }
+  }
+
+  @media screen and (width >=48rem) {
+    .add-techcat-dialog {
+      block-size: 70vh;
+      inline-size: 70vw;
+    }
+  }
+
+  @media screen and (width >=83.5rem) {
+    .add-techcat-dialog {
+      block-size: 70vh;
+      inline-size: 50vw;
+    }
+  }
+</style>
+
+<script type="module">
+  const addTechcatForm = document.getElementById('add-techcat-form');
+  const trigger = document.getElementById('add-techcat');
+  const dialog = document.getElementById('add-techcat-dialog');
+
+  trigger.addEventListener('click', () => {
+    dialog.showModal();
+  });
+
+  addTechcatForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const endpoint = `${document.location.href}.netlify/functions/add-techcat`;
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: new FormData(event.target)
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData);
+      }
+    } catch (error) {
+      throw new Error(`Error: ${error.message}`);
+    }
+
+  });
+</script>
+
+  <ul class="techcats-list-container">
+    
+    
+    <li class="techcats-list-entry">
+      <a href="profile/1/luna" class="techcats-entry-name">
+        <figure>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=450&format=jpeg&via=transform" width="450" alt="Luna the cat"></picture>
+          <figcaption>
+            Luna
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    
+    
+    <li class="techcats-list-entry">
+      <a href="profile/2/milo" class="techcats-entry-name">
+        <figure>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fmilo.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fmilo.jpg&width=450&format=jpeg&via=transform" width="450" alt="Milo the cat"></picture>
+          <figcaption>
+            Milo
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    
+    
+    <li class="techcats-list-entry">
+      <a href="profile/3/whiskerpuff" class="techcats-entry-name">
+        <figure>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fwhiskerpuff.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fwhiskerpuff.jpg&width=450&format=jpeg&via=transform" width="450" alt="Whiskerpuff the cat"></picture>
+          <figcaption>
+            Whiskerpuff
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    
+    
+    <li class="techcats-list-entry">
+      <a href="profile/4/pudding" class="techcats-entry-name">
+        <figure>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fpudding.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fpudding.jpg&width=450&format=jpeg&via=transform" width="450" alt="Pudding the cat"></picture>
+          <figcaption>
+            Pudding
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    
+    
+    <li class="techcats-list-entry">
+      <a href="profile/5/nibbles" class="techcats-entry-name">
+        <figure>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fnibbles.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fnibbles.jpg&width=450&format=jpeg&via=transform" width="450" alt="Nibbles the cat"></picture>
+          <figcaption>
+            Nibbles
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    
+    
+    <li class="techcats-list-entry">
+      <a href="profile/6/marshmallow" class="techcats-entry-name">
+        <figure>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fmarshmallow.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fmarshmallow.jpg&width=450&format=jpeg&via=transform" width="450" alt="Marshmallow the cat"></picture>
+          <figcaption>
+            Marshmallow
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+<style>
+  .techcats-list-wrapper {
+    display: grid;
+    padding: var(--size-48);
+    z-index: var(--bring-to-front);
+  }
+
   .techcats-list-container {
     align-items: center;
     display: flex;
@@ -196,7 +397,7 @@
   }
 
   @media screen and (width < 48rem) {
-    .techcats-list-container {
+    .techcats-list-wrapper {
       background-color: var(--color-primary-surface-mobile);
       padding-block: var(--size-48);
     }
@@ -211,11 +412,9 @@
   }
 
   @media screen and (width >=48rem) {
-    .techcats-list-container {
+    .techcats-list-wrapper {
       background-color: var(--color-primary-surface);
       border-radius: var(--border-radius-container);
-      padding: var(--size-48);
-      padding-block-start: var(--size-112);
     }
 
     .techcats-list-entry {
@@ -228,7 +427,7 @@
   }
 
   @media screen and (width >=64rem) {
-    .techcats-list-container {
+    .techcats-list-wrapper {
       --spacecat-size-block: 21.625rem;
       --spacecat-size-inline: 18.75rem;
       --spacecat-inset-block-start: -18rem;
@@ -253,7 +452,7 @@
   }
 
   @media screen and (width >=83.5rem) {
-    .techcats-list-container {
+    .techcats-list-wrapper {
       --spacecat-size-block: 27.375rem;
       --spacecat-size-inline: 31.562rem;
       --spacecat-inset-block-start: -21rem;

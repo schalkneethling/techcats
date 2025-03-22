@@ -18,7 +18,10 @@
   --color-primary-brown: #30140c;
   --color-primary-highlight: #feb769;
 
+  --color-secondary-brown: #5c2c1e;
+
   --color-neutral-inverted: #fff3ef;
+  --color-backdrop: rgba(0 0 0 / 70%);
 
   --color-page-gradient: linear-gradient(
     to bottom,
@@ -59,6 +62,8 @@
 
   --typography-body-family:
     menlo, consolas, monaco, liberation mono, lucida console, monospace;
+
+  --typography-line-height-heading: 1.2;
 
   --typography-font-size-logo: 4.875rem;
   --typography-font-size-xxl: 2.986rem;
@@ -104,6 +109,15 @@ a {
   color: var(--color-primary-brown);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+legend {
+  line-height: var(--typography-line-height-heading);
+}
+
 h1 {
   font-size: var(--typography-font-size-xxl);
 }
@@ -128,6 +142,40 @@ h5 {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+/* https://www.tpgi.com/the-anatomy-of-visually-hidden/ */
+.visually-hidden:not(:focus, :active) {
+  block-size: 1px;
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.inert {
+  max-block-size: 100vh;
+  overflow: hidden;
+}
+
+/**
+ * A utility class used on a wrapper element such as a `div` to group two form elements
+ * commonly a label and an input.
+ * - Sets the display to grid.
+ * - Sets the a 0.75rem gap between the elements.
+ * - Sets the margin block end to 0.75rem.
+ */
+.form-field {
+  display: grid;
+  gap: var(--size-12);
+  margin-block-end: var(--size-16);
+}
+
+.form-field-horizontal {
+  display: flex;
+  gap: var(--size-12);
+  margin-block-end: var(--size-16);
 }
 
 @media screen and (width >= 48rem) {
