@@ -5,6 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechCats ~ The cats of people who make websites</title>
+
+  <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="TechCats">
+  <link rel="manifest" href="/assets/site.webmanifest">
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="TechCats">
+  <meta property="og:description" content="The cats of people who make websites.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techcats.netlify.app/">
+  <meta property="og:site_name" content="TechCats">
+  <meta property="og:image" content="https://techcats.netlify.app/social-share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="fediverse:creator" content="@schalkneethling@hachyderm.io">
+
   <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/css/techcats.css" media="screen">
 </head>
@@ -165,7 +185,7 @@
           <input type="url" name="caretaker-github" id="caretaker-github">
         </div>
       </fieldset>
-      <button class="primary-button" type="submit">
+      <button class="primary-button submit-techcat" type="submit">
         <span class="add-techcat-initial">Add Your TechCat</span>
         <span class="add-techcat-onsubmit" hidden="">Beaming TechCat</span>
       </button>
@@ -346,7 +366,7 @@
         padding-inline: var(--size-32);
       }
 
-      [type="submit"] {
+      .submit-techcat {
         inline-size: 22rem;
       }
     }
@@ -440,17 +460,17 @@
   </div>
   <div class="techcats-profile-container">
     <div class="techcat-profile-image">
-      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fmilo.jpg&width=900&format=webp&via=transform 900w"><img class="techcats-photo" src="/.11ty/image/?src=assets%2Fcats%2Fmilo.jpg&width=900&format=jpeg&via=transform" height="900" width="900" alt="Milo the cat"></picture>
+      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fsamurai.webp&width=900&format=webp&via=transform 900w"><img class="techcats-photo" src="/.11ty/image/?src=assets%2Fcats%2Fsamurai.webp&width=900&format=jpeg&via=transform" height="900" width="900" alt="A ginger cat with bright amber eyes lounges comfortably in a woven basket bed lined with soft blankets. The cat has a calm, alert expression and is resting with its paws tucked under its body. "></picture>
     </div>
     <div class="primary-content-container">
       <section aria-labelledby="section-techcat-profile" class="techcat-profile-details">
-        <h1 class="techcat-profile-name" id="section-techcat-profile">Milo</h1>
-        <p>Milo is the ultimate pair-programming companion, always perched on my shoulder as I write code. His favorite activity is watching the terminal scroll, convinced that the lines of code are his personal cat TV. When he&#39;s not supervising my work, he&#39;s busy batting at stray USB cables like they&#39;re his sworn enemies.</p>
+        <h1 class="techcat-profile-name" id="section-techcat-profile">Samurai</h1>
+        <p>Samurai, the fiery ginger warrior, joined the household with a legendary origin story—having faced down two Huskies before her rescue by neighborly heroes. This fearless feline brings vibrant energy to our home, with a mischievous spirit that finds particular joy in stalking Miss Peregrine through windows, much to the elder cat&#39;s dismay. Despite her fierce reputation, Samurai melts at the promise of a good scratch, frequently interrupting coding sessions by leaping onto my desk to demand immediate attention and cuddles. Her sudden keyboard inspections might seem like affection, but perhaps she&#39;s actually conducting rigorous code reviews, her amber eyes scanning for bugs with the same intensity she once faced down those canine adversaries. Equal parts tenacious fighter and loving companion, Samurai proves daily that the smallest packages often contain the boldest spirits.</p>
       </section>
       <section aria-labelledby="section-techcat-caretaker" class="techcat-profile-caretaker">
         <hgroup id="section-techcat-caretaker">
           <h2>Caretaker</h2>
-          <p class="techcat-profile-caretaker-name">Alex Johnson</p>
+          <p class="techcat-profile-caretaker-name">Schalk Neethling</p>
         </hgroup>
         <ul class="reset-list techcat-profile-caretaker-links">
           
@@ -458,7 +478,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
               <path fill="#30140C" d="M31.659.34a1.165 1.165 0 0 1 .24 1.299L18.712 31.308a1.165 1.165 0 0 1-2.137-.017l-4.758-11.11-11.112-4.76a1.165 1.165 0 0 1-.014-2.134L30.361.1a1.166 1.166 0 0 1 1.298.24Z"></path>
             </svg>
-            <a href="https://alexjohnson.dev">alexjohnson.dev</a>
+            <a href="https://schalkneethling.com">schalkneethling.com</a>
           </li>
           
           
@@ -466,7 +486,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
               <path fill="#30140C" d="M22.805 24.39c4.3-.48 8.042-2.95 8.511-5.206.743-3.556.683-8.678.683-8.678 0-6.94-4.877-8.976-4.877-8.976C24.665.476 20.443.034 16.057 0h-.107C11.562.034 7.343.476 4.885 1.53c0 0-4.874 2.034-4.874 8.976L.006 11.83c-.008 1.28-.014 2.7.024 4.182.177 6.789 1.335 13.48 8.064 15.14 3.101.767 5.766.927 7.912.817 3.889-.2 6.073-1.294 6.073-1.294l-.128-2.634s-2.78.82-5.902.72c-3.094-.1-6.358-.312-6.859-3.856a7.51 7.51 0 0 1-.07-.992s3.038.692 6.886.856c2.353.1 4.559-.128 6.8-.378h-.002Zm3.44-4.94h-3.569v-8.16c0-1.718-.776-2.59-2.327-2.59-1.715 0-2.575 1.034-2.575 3.082v4.466h-3.55V11.78c0-2.048-.86-3.082-2.574-3.082-1.551 0-2.328.872-2.328 2.592v8.159H5.753v-8.405c0-1.717.47-3.081 1.408-4.092.973-1.01 2.245-1.528 3.825-1.528 1.826 0 3.209.656 4.124 1.966L16 8.78l.889-1.39c.915-1.31 2.297-1.966 4.126-1.966 1.578 0 2.85.518 3.82 1.528.942 1.01 1.412 2.374 1.41 4.092v8.407Z"></path>
             </svg>
-            <a href="https://hachyderm.io/@alexjohnson">hachyderm.io/@alexjohnson</a>
+            <a href="https://hachyderm.io/@schalkneethling">hachyderm.io/@schalkneethling</a>
           </li>
           
           
@@ -481,7 +501,7 @@
                 </clipPath>
               </defs>
             </svg>
-            <a href="https://github.com/alexjohnson">github.com/alexjohnson</a>
+            <a href="https://github.com/schalkneethling">github.com/schalkneethling</a>
           </li>
           
         </ul>

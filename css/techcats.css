@@ -7,10 +7,14 @@
 }
 
 :root {
+  --border-dialog: var(--size-6) solid var(--color-primary-brown);
+  --outline-dialog: var(--size-6) solid var(--color-xlight-purple);
+
   --border-radius-container: 2.625rem;
 
   --color-light-green: #caefd7;
   --color-light-purple: #c7bff5;
+  --color-xlight-purple: #ede9ff;
   --color-light-blue: #abc9e9;
 
   --color-primary-surface: #fffaf1;
@@ -169,17 +173,27 @@ h5 {
 .form-field {
   display: grid;
   gap: var(--size-12);
-  margin-block-end: var(--size-16);
 }
 
 .form-field-horizontal {
   display: flex;
   gap: var(--size-12);
-  margin-block-end: var(--size-16);
+}
+
+@media screen and (width < 48rem) {
+  .form-field,
+  .form-field-horizontal {
+    margin-block-end: var(--size-24);
+  }
 }
 
 @media screen and (width >= 48rem) {
   .page-wrapper {
     padding-inline: 5%;
+  }
+
+  .form-field,
+  .form-field-horizontal {
+    margin-block-end: var(--size-16);
   }
 }

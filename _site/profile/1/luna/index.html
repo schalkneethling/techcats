@@ -47,7 +47,6 @@
       color: var(--color-primary-brown);
       font-family: var(--typography-logo);
       font-size: var(--typography-font-size-logo);
-      margin-block-start: 0;
     }
 
     .subtitle {
@@ -57,6 +56,10 @@
     }
 
     @media screen and (width < 48rem) {
+      h1 {
+        margin-block-start: var(--size-24);
+      }
+
       .subtitle {
         inset: -1rem -1rem;
         max-inline-size: 14rem;
@@ -80,71 +83,454 @@
       --globe-inset-block-end: -4.5rem;
     }
   }
+
+  @media screen and (width >=64rem) {
+    .page-header {
+      h1 {
+        margin-block-start: 0;
+      }
+    }
+  }
 </style>
 
 
     <main>
       
-<div class="techcats-profile-container">
-  <div class="techcat-profile-image">
-    <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=900&format=webp&via=transform 900w"><img class="techcats-photo" src="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=900&format=jpeg&via=transform" height="900" width="900" alt="Luna the cat"></picture>
+<div class="techcats-profile-wrapper">
+  <div class="techcats-profile-actions-bar">
+    <a class="techcats-profile-actions-bar-link" href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="-0.5 -0.5 16 16">
+        <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M8.75 4.375 5.625 7.5l3.125 3.125"></path>
+      </svg>      
+      <span>Back to all TechCats</span>
+    </a>
+    <button id="add-techcat" type="button" class="primary-button add-techcat" aria-expanded="false" aria-haspopup="dialog">Add Your TechCat</button>
+
+<dialog aria-labelledby="dialog-title-label" id="add-techcat-dialog" class="add-techcat-dialog">
+  <form class="close-dialog-form" method="dialog">
+    <button type="submit" class="close-dialog">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"></path>
+      </svg>
+      <span class="visually-hidden">Close dialog</span>
+    </button>
+  </form>
+
+  <div class="dialog-content-wrapper">
+    <h2 id="dialog-title-label" class="dialog-title">Add Your TechCat</h2>
+    <form id="add-techcat-form" name="add-techcat" method="post">
+      <fieldset>
+        <legend>Techcat Details</legend>
+
+        <div class="form-field">
+          <label for="techcat-name">Your Techcat's Name</label>
+          <input type="text" name="techcat-name" id="techcat-name" required="">
+        </div>
+
+        <div class="form-field-horizontal">
+          <input type="checkbox" name="techcat-memoriam" id="techcat-memoriam">
+          <label for="techcat-memoriam">In Memoriam? (optional)</label>
+        </div>
+
+        <div class="form-field">
+          <label for="techcat-about">Your Techcat's Bio</label>
+          <textarea name="techcat-about" id="techcat-about" cols="30" rows="10" required=""></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="techcat-photo">Photo URL (must be public, will <em>not</em> be used for hot linking)</label>
+          <input type="url" name="techcat-photo" id="techcat-photo" required="">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Caretaker Details</legend>
+        <div class="form-field">
+          <label for="caretaker-name">Caretaker Name</label>
+          <input type="text" name="caretaker-name" id="caretaker-name" required="">
+        </div>
+
+        <div class="form-field">
+          <label for="caretaker-website">Your website (optional)</label>
+          <input type="url" name="caretaker-website" id="caretaker-website">
+        </div>
+
+        <div class="form-field">
+          <label for="caretaker-social">On socials? (optional)</label>
+          <input type="url" name="caretaker-social" id="caretaker-social">
+        </div>
+
+        <div class="form-field">
+          <label for="caretaker-github">On GitHub? (optional)</label>
+          <input type="url" name="caretaker-github" id="caretaker-github">
+        </div>
+      </fieldset>
+      <button class="primary-button" type="submit">
+        <span class="add-techcat-initial">Add Your TechCat</span>
+        <span class="add-techcat-onsubmit" hidden="">Beaming TechCat</span>
+      </button>
+    </form>
   </div>
-  <div class="primary-content-container">
-    <section aria-labelledby="section-techcat-profile" class="techcat-profile-details">
-      <h1 class="techcat-profile-name" id="section-techcat-profile">Luna</h1>
-      <p>Luna is the undisputed queen of my home office, overseeing every keystroke and ensuring I stay on task (or at least take frequent cuddle breaks). As a dedicated bug hunter—both in code and in real life—she has an uncanny ability to appear just as I&#39;m debugging, offering her own feline wisdom by sitting directly on my keyboard.</p>
-    </section>
-    <section aria-labelledby="section-techcat-caretaker" class="techcat-profile-caretaker">
-      <hgroup id="section-techcat-caretaker">
-        <h2>Caretaker</h2>
-        <p class="techcat-profile-caretaker-name">Schalk Neethling</p>
-      </hgroup>
-      <ul class="reset-list techcat-profile-caretaker-links">
-        
-        <li class="links-entry website">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
-            <path fill="#30140C" d="M31.659.34a1.165 1.165 0 0 1 .24 1.299L18.712 31.308a1.165 1.165 0 0 1-2.137-.017l-4.758-11.11-11.112-4.76a1.165 1.165 0 0 1-.014-2.134L30.361.1a1.166 1.166 0 0 1 1.298.24Z"></path>
-          </svg>
-          <a href="https://schalkneethling.com">schalkneethling.com</a>
-        </li>
-        
-        
-        <li class="links-entry social">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
-            <path fill="#30140C" d="M22.805 24.39c4.3-.48 8.042-2.95 8.511-5.206.743-3.556.683-8.678.683-8.678 0-6.94-4.877-8.976-4.877-8.976C24.665.476 20.443.034 16.057 0h-.107C11.562.034 7.343.476 4.885 1.53c0 0-4.874 2.034-4.874 8.976L.006 11.83c-.008 1.28-.014 2.7.024 4.182.177 6.789 1.335 13.48 8.064 15.14 3.101.767 5.766.927 7.912.817 3.889-.2 6.073-1.294 6.073-1.294l-.128-2.634s-2.78.82-5.902.72c-3.094-.1-6.358-.312-6.859-3.856a7.51 7.51 0 0 1-.07-.992s3.038.692 6.886.856c2.353.1 4.559-.128 6.8-.378h-.002Zm3.44-4.94h-3.569v-8.16c0-1.718-.776-2.59-2.327-2.59-1.715 0-2.575 1.034-2.575 3.082v4.466h-3.55V11.78c0-2.048-.86-3.082-2.574-3.082-1.551 0-2.328.872-2.328 2.592v8.159H5.753v-8.405c0-1.717.47-3.081 1.408-4.092.973-1.01 2.245-1.528 3.825-1.528 1.826 0 3.209.656 4.124 1.966L16 8.78l.889-1.39c.915-1.31 2.297-1.966 4.126-1.966 1.578 0 2.85.518 3.82 1.528.942 1.01 1.412 2.374 1.41 4.092v8.407Z"></path>
-          </svg>
-          <a href="https://hachyderm.io/@schalkneethling">hachyderm.io/@schalkneethling</a>
-        </li>
-        
-        
-        <li class="links-entry github">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
-            <g clip-path="url(#a)">
-              <path fill="#30140C" d="M16 0C7.16 0 0 7.16 0 16c0 7.08 4.58 13.06 10.94 15.18.8.14 1.1-.34 1.1-.76 0-.38-.02-1.64-.02-2.98-4.02.74-5.06-.98-5.38-1.88-.18-.46-.96-1.88-1.64-2.26-.56-.3-1.36-1.04-.02-1.06 1.26-.02 2.16 1.16 2.46 1.64 1.44 2.42 3.74 1.74 4.66 1.32.14-1.04.56-1.74 1.02-2.14-3.56-.4-7.28-1.78-7.28-7.9 0-1.74.62-3.18 1.64-4.3-.16-.4-.72-2.04.16-4.24 0 0 1.34-.42 4.4 1.64 1.28-.36 2.64-.54 4-.54 1.36 0 2.72.18 4 .54 3.06-2.08 4.4-1.64 4.4-1.64.88 2.2.32 3.84.16 4.24 1.02 1.12 1.64 2.54 1.64 4.3 0 6.14-3.74 7.5-7.3 7.9.58.5 1.08 1.46 1.08 2.96 0 2.14-.02 3.86-.02 4.4 0 .42.3.92 1.1.76A16.02 16.02 0 0 0 32 16c0-8.84-7.16-16-16-16Z"></path>
-            </g>
-            <defs>
-              <clipPath id="a">
-                <path fill="#fff" d="M0 0h32v32H0z"></path>
-              </clipPath>
-            </defs>
-          </svg>
-          <a href="https://github.com/schalkneethling">github.com/schalkneethling</a>
-        </li>
-        
-      </ul>
-    </section>
+</dialog>
+
+<div class="add-techcat-success" id="add-techcat-success" popover="">
+  <h3>Thank you for submitting your TechCat!</h3>
+  <p>I will add them to the site soon. You can <a href="">follow progress on GitHub</a>.</p>
+</div>
+
+<style>
+  .primary-button,
+  .close-dialog {
+    cursor: pointer;
+  }
+
+
+  .primary-button {
+    background-color: var(--color-primary-brown);
+    border: var(--size-8) solid var(--color-primary-highlight);
+    border-radius: var(--size-48);
+    color: var(--color-neutral-inverted);
+    display: block;
+    inline-size: max-content;
+    justify-self: end;
+    margin-block-end: var(--size-48);
+    padding-block: var(--size-16);
+    padding-inline: var(--size-32);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-secondary-brown);
+    }
+  }
+
+  .close-dialog {
+    appearance: none;
+    background: none;
+    border: none;
+
+    svg {
+      block-size: calc(var(--icon-size) * 2);
+      inline-size: calc(var(--icon-size) * 2);
+      fill: var(--color-primary-brown);
+    }
+  }
+
+  .add-techcat-dialog:open {
+    background-color: var(--color-xlight-purple);
+    border: var(--border-dialog);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    outline: var(--outline-dialog);
+    padding-block: var(--size-16);
+    padding-inline: var(--size-32);
+    scrollbar-color: var(--color-primary-brown) var(--color-xlight-purple);
+
+    &::backdrop {
+      background-color: var(--color-backdrop);
+    }
+
+    .close-dialog-form {
+      justify-self: end;
+    }
+
+    .dialog-title {
+      color: var(--color-primary-brown);
+      font-family: var(--typography-logo);
+      font-size: var(--typography-font-size-xxl);
+      margin: 0;
+      margin-block-end: var(--size-32);
+    }
+
+    fieldset {
+      background-color: var(--color-primary-surface);
+      border: none;
+      margin-block: var(--size-16) var(--size-32);
+    }
+
+    legend {
+      background-color: var(--color-primary-brown);
+      color: var(--color-neutral-inverted);
+      font-size: var(--typography-font-size-medium);
+      margin-block-end: var(--size-16);
+      padding-block: var(--size-8);
+      padding-inline: var(--size-16);
+    }
+  }
+
+  .add-techcat-success {
+    color: var(--color-primary-brown);
+    padding: var(--size-16);
+    text-align: center;
+  }
+
+  .add-techcat-onsubmit:not([hidden]) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      display: block;
+      animation: dots 1s steps(5, end) infinite;
+    }
+  }
+
+  @keyframes dots {
+    0% {
+      content: "";
+    }
+
+    25% {
+      content: ".";
+    }
+
+    50% {
+      content: "..";
+    }
+
+    75% {
+      content: "...";
+    }
+
+    100% {
+      content: "";
+    }
+  }
+
+  @media screen and (width < 48rem) {
+    .primary-button {
+      inline-size: 100%;
+      font-size: var(--typography-font-size-default);
+    }
+
+    .add-techcat-dialog {
+      block-size: 100vh;
+      inline-size: 100vw;
+    }
+
+    .add-techcat-dialog:open {
+      padding-block: var(--size-16);
+      padding-inline: var(--size-8);
+
+      .dialog-title {
+        font-size: var(--typography-font-size-large);
+      }
+
+      fieldset {
+        border-radius: calc(var(--border-radius-container) / 2);
+        padding-inline: var(--size-24);
+      }
+
+      legend {
+        font-size: var(--typography-font-size-default);
+      }
+    }
+
+    .add-techcat-success {
+      margin-inline: var(--size-16);
+    }
+  }
+
+  @media screen and (width >=48rem) {
+    .add-techcat-dialog {
+      block-size: 70vh;
+      inline-size: 70vw;
+    }
+
+    .add-techcat-dialog:open {
+      padding-block: var(--size-16);
+      padding-inline: var(--size-32);
+
+      fieldset {
+        border-radius: var(--border-radius-container);
+        padding-inline: var(--size-32);
+      }
+
+      [type="submit"] {
+        inline-size: 22rem;
+      }
+    }
+
+  }
+
+  @media screen and (width >=83.5rem) {
+    .add-techcat-dialog {
+      block-size: 70vh;
+      inline-size: 50vw;
+    }
+  }
+</style>
+
+<script type="module">
+  const addTechcatForm = document.getElementById('add-techcat-form');
+  const trigger = document.getElementById('add-techcat');
+  const dialog = document.getElementById('add-techcat-dialog');
+
+  function updateAriaExpanded() {
+    const nextExpandedState = trigger.getAttribute("aria-expanded") === "false" ? "true" : "false";
+    trigger.setAttribute("aria-expanded", nextExpandedState);
+  }
+
+  trigger.addEventListener('click', () => {
+    updateAriaExpanded();
+    dialog.showModal();
+  });
+
+  dialog.addEventListener('close', () => {
+    updateAriaExpanded();
+  });
+
+  function showSuccessPopover(data) {
+    const popover = document.getElementById('add-techcat-success');
+    const githubLink = popover.querySelector('a');
+    githubLink.href = data.issue;
+    popover.showPopover();
+  }
+
+  addTechcatForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const endpoint = `${document.location.href}.netlify/functions/add-techcat`;
+    const buttonTxtInitial = document.querySelector('.add-techcat-initial');
+    const buttonTxtOnsubmit = document.querySelector('.add-techcat-onsubmit');
+
+    buttonTxtInitial.hidden = true;
+    buttonTxtOnsubmit.hidden = false;
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: new FormData(event.target)
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+
+        buttonTxtInitial.hidden = false;
+        buttonTxtOnsubmit.hidden = true;
+
+        addTechcatForm.reset();
+
+        dialog.close();
+
+        if (confetti) {
+          confetti({
+            disableForReducedMotion: true,
+            particleCount: 300,
+            startVelocity: 45,
+            spread: 360,
+            orgin: {
+              x: 0.5,
+              y: 0,
+            },
+            zIndex: 1000,
+          });
+        }
+
+        showSuccessPopover(responseData);
+
+        console.log(responseData);
+      }
+    } catch (error) {
+      throw new Error(`Error: ${error.message}`);
+    }
+
+  });
+</script>
+
+  </div>
+  <div class="techcats-profile-container">
+    <div class="techcat-profile-image">
+      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=900&format=webp&via=transform 900w"><img class="techcats-photo" src="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=900&format=jpeg&via=transform" height="900" width="900" alt="Luna the cat"></picture>
+    </div>
+    <div class="primary-content-container">
+      <section aria-labelledby="section-techcat-profile" class="techcat-profile-details">
+        <h1 class="techcat-profile-name" id="section-techcat-profile">Luna</h1>
+        <p>Luna is the undisputed queen of my home office, overseeing every keystroke and ensuring I stay on task (or at least take frequent cuddle breaks). As a dedicated bug hunter—both in code and in real life—she has an uncanny ability to appear just as I&#39;m debugging, offering her own feline wisdom by sitting directly on my keyboard.</p>
+      </section>
+      <section aria-labelledby="section-techcat-caretaker" class="techcat-profile-caretaker">
+        <hgroup id="section-techcat-caretaker">
+          <h2>Caretaker</h2>
+          <p class="techcat-profile-caretaker-name">Schalk Neethling</p>
+        </hgroup>
+        <ul class="reset-list techcat-profile-caretaker-links">
+          
+          <li class="links-entry website">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+              <path fill="#30140C" d="M31.659.34a1.165 1.165 0 0 1 .24 1.299L18.712 31.308a1.165 1.165 0 0 1-2.137-.017l-4.758-11.11-11.112-4.76a1.165 1.165 0 0 1-.014-2.134L30.361.1a1.166 1.166 0 0 1 1.298.24Z"></path>
+            </svg>
+            <a href="https://schalkneethling.com">schalkneethling.com</a>
+          </li>
+          
+          
+          <li class="links-entry social">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+              <path fill="#30140C" d="M22.805 24.39c4.3-.48 8.042-2.95 8.511-5.206.743-3.556.683-8.678.683-8.678 0-6.94-4.877-8.976-4.877-8.976C24.665.476 20.443.034 16.057 0h-.107C11.562.034 7.343.476 4.885 1.53c0 0-4.874 2.034-4.874 8.976L.006 11.83c-.008 1.28-.014 2.7.024 4.182.177 6.789 1.335 13.48 8.064 15.14 3.101.767 5.766.927 7.912.817 3.889-.2 6.073-1.294 6.073-1.294l-.128-2.634s-2.78.82-5.902.72c-3.094-.1-6.358-.312-6.859-3.856a7.51 7.51 0 0 1-.07-.992s3.038.692 6.886.856c2.353.1 4.559-.128 6.8-.378h-.002Zm3.44-4.94h-3.569v-8.16c0-1.718-.776-2.59-2.327-2.59-1.715 0-2.575 1.034-2.575 3.082v4.466h-3.55V11.78c0-2.048-.86-3.082-2.574-3.082-1.551 0-2.328.872-2.328 2.592v8.159H5.753v-8.405c0-1.717.47-3.081 1.408-4.092.973-1.01 2.245-1.528 3.825-1.528 1.826 0 3.209.656 4.124 1.966L16 8.78l.889-1.39c.915-1.31 2.297-1.966 4.126-1.966 1.578 0 2.85.518 3.82 1.528.942 1.01 1.412 2.374 1.41 4.092v8.407Z"></path>
+            </svg>
+            <a href="https://hachyderm.io/@schalkneethling">hachyderm.io/@schalkneethling</a>
+          </li>
+          
+          
+          <li class="links-entry github">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+              <g clip-path="url(#a)">
+                <path fill="#30140C" d="M16 0C7.16 0 0 7.16 0 16c0 7.08 4.58 13.06 10.94 15.18.8.14 1.1-.34 1.1-.76 0-.38-.02-1.64-.02-2.98-4.02.74-5.06-.98-5.38-1.88-.18-.46-.96-1.88-1.64-2.26-.56-.3-1.36-1.04-.02-1.06 1.26-.02 2.16 1.16 2.46 1.64 1.44 2.42 3.74 1.74 4.66 1.32.14-1.04.56-1.74 1.02-2.14-3.56-.4-7.28-1.78-7.28-7.9 0-1.74.62-3.18 1.64-4.3-.16-.4-.72-2.04.16-4.24 0 0 1.34-.42 4.4 1.64 1.28-.36 2.64-.54 4-.54 1.36 0 2.72.18 4 .54 3.06-2.08 4.4-1.64 4.4-1.64.88 2.2.32 3.84.16 4.24 1.02 1.12 1.64 2.54 1.64 4.3 0 6.14-3.74 7.5-7.3 7.9.58.5 1.08 1.46 1.08 2.96 0 2.14-.02 3.86-.02 4.4 0 .42.3.92 1.1.76A16.02 16.02 0 0 0 32 16c0-8.84-7.16-16-16-16Z"></path>
+              </g>
+              <defs>
+                <clipPath id="a">
+                  <path fill="#fff" d="M0 0h32v32H0z"></path>
+                </clipPath>
+              </defs>
+            </svg>
+            <a href="https://github.com/schalkneethling">github.com/schalkneethling</a>
+          </li>
+          
+        </ul>
+      </section>
+    </div>
   </div>
 </div>
 
 <style>
-  .techcats-profile-container {
+  .techcats-profile-wrapper {
     background-color: var(--container-background-color);
+    position: relative;
+    z-index: var(--bottom-layer);
+  }
+
+  .techcats-profile-actions-bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .techcats-profile-actions-bar-link {
+      display: block;
+      position: relative;
+      outline: none;
+      
+      svg {
+        inset-block: 20%;
+        inset-inline-start: calc(var(--size-16) * -1);
+        position: absolute;
+        transition: inset-inline-start 300ms ease-in-out;
+      }
+      
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        
+        svg {
+          inset-inline-start: calc(var(--size-24) * -1);
+          scale: 2;
+        }
+      }
+    }
+  }
+
+  .techcats-profile-container {
     display: grid;
     max-inline-size: var(--max-container-inline-size);
     padding-block: var(--size-48);
     padding-inline: var(--size-16);
-    position: relative;
-    z-index: var(--bottom-layer);
   }
 
   .techcats-photo {
@@ -176,13 +562,13 @@
   }
 
   @media screen and (width < 48rem) {
-    .techcats-profile-container {
+    .techcats-profile-wrapper {
       --container-background-color: var(--color-primary-surface-mobile);
     }
   }
-  
-  @media screen and (width >= 48rem) {
-    .techcats-profile-container {
+
+  @media screen and (width >=48rem) {
+    .techcats-profile-wrapper {
       --container-background-color: var(--color-primary-surface);
       border-radius: var(--border-radius-container);
       padding: var(--size-48);
@@ -288,6 +674,7 @@
   }
 </style>
 
+  <script src="/assets/js/canvas-confetti.js"></script>
 </body>
 
 </html>

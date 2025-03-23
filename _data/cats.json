@@ -2,13 +2,13 @@
   {
     "id": 1,
     "techcat": {
-      "name": "Luna",
-      "bio": "Luna is the undisputed queen of my home office, overseeing every keystroke and ensuring I stay on task (or at least take frequent cuddle breaks). As a dedicated bug hunter—both in code and in real life—she has an uncanny ability to appear just as I'm debugging, offering her own feline wisdom by sitting directly on my keyboard.",
+      "name": "Miss Peregrine",
+      "bio": "Queen of the household, Miss Peregrine commands respect with her elegant tuxedo coat and dignified demeanor. While she may appear standoffish at first glance, this senior feline harbors a heart of gold beneath her formal exterior. Her regal presence is so powerful that even the border collie knows better than to challenge her authority. When not supervising her domain from carefully selected perches, Ms Peregrine might grace a lucky human with her rare but meaningful displays of affection. A true tech companion who appreciates order and precision, she silently judges code quality from a distance while maintaining her aristocratic composure.",
       "in_memoriam": false,
       "photo": {
-        "alt": "Luna the cat",
+        "alt": "A black and white cat mid-yawn, showing sharp teeth and tongue. Whiskers fan out, and the background shows a bed, dresser, and open door.",
         "height": 450,
-        "src": "/assets/cats/luna.jpg",
+        "src": "/assets/cats/kitty.webp",
         "width": 450
       }
     },
@@ -24,110 +24,44 @@
   {
     "id": 2,
     "techcat": {
-      "name": "Milo",
-      "bio": "Milo is the ultimate pair-programming companion, always perched on my shoulder as I write code. His favorite activity is watching the terminal scroll, convinced that the lines of code are his personal cat TV. When he's not supervising my work, he's busy batting at stray USB cables like they're his sworn enemies.",
+      "name": "Salem",
+      "bio": "Salem, Miss Peregrine's distinguished offspring, carries himself with the quiet elegance befitting his lineage. His snowshoe coat and mesmerizing blue eyes make him a vision of feline beauty, drawing admiring glances but rarely seeking attention. This reserved gentleman saves his rare but treasured purrs for special occasions, turning each rumble into a memorable event worth celebrating. While he generally keeps to himself, Salem has formed an unbreakable bond with our youngest daughter, his chosen human. Nothing brings him more joy than a small bowl of milk, which he savors with delicate appreciation. Though not one for the spotlight, this soft, cuddly sweetheart brings a gentle presence to the household tech scene, offering silent companionship to our daughter as she navigates the digital world.",
       "in_memoriam": false,
       "photo": {
-        "alt": "Milo the cat",
+        "alt": "A cat with a white face and dark markings lies on a pink blanket, gazing sleepily. The background shows a cozy room with curtains, shelves, and decor.",
         "height": 450,
-        "src": "/assets/cats/milo.jpg",
+        "src": "/assets/cats/salem.webp",
         "width": 450
       }
     },
     "caretaker": {
-      "name": "Alex Johnson",
+      "name": "Schalk Neethling",
       "urls": {
-        "website": "https://alexjohnson.dev",
-        "social": "https://hachyderm.io/@alexjohnson",
-        "github": "https://github.com/alexjohnson"
+        "website": "https://schalkneethling.com",
+        "social": "https://hachyderm.io/@schalkneethling",
+        "github": "https://github.com/schalkneethling"
       }
     }
   },
   {
     "id": 3,
     "techcat": {
-      "name": "Whiskerpuff",
-      "bio": "Whiskerpuff takes his job as a cloud engineer very seriously—mostly by napping on my router and ensuring maximum uptime with his fluffy presence. He's also the chief QA tester, often walking across my keyboard to introduce surprise 'features' into my code.",
+      "name": "Samurai",
+      "bio": "Samurai, the fiery ginger warrior, joined the household with a legendary origin story—having faced down two Huskies before her rescue by neighborly heroes. This fearless feline brings vibrant energy to our home, with a mischievous spirit that finds particular joy in stalking Miss Peregrine through windows, much to the elder cat's dismay. Despite her fierce reputation, Samurai melts at the promise of a good scratch, frequently interrupting coding sessions by leaping onto my desk to demand immediate attention and cuddles. Her sudden keyboard inspections might seem like affection, but perhaps she's actually conducting rigorous code reviews, her amber eyes scanning for bugs with the same intensity she once faced down those canine adversaries. Equal parts tenacious fighter and loving companion, Samurai proves daily that the smallest packages often contain the boldest spirits.",
       "in_memoriam": false,
       "photo": {
-        "alt": "Whiskerpuff the cat",
+        "alt": "A ginger cat with bright amber eyes lounges comfortably in a woven basket bed lined with soft blankets. The cat has a calm, alert expression and is resting with its paws tucked under its body. ",
         "height": 450,
-        "src": "/assets/cats/whiskerpuff.jpg",
+        "src": "/assets/cats/samurai.webp",
         "width": 450
       }
     },
     "caretaker": {
-      "name": "Jamie Lee",
+      "name": "Schalk Neethling",
       "urls": {
-        "website": "https://jamielee.dev",
-        "social": "https://hachyderm.io/@jamielee",
-        "github": "https://github.com/jamielee"
-      }
-    }
-  },
-  {
-    "id": 4,
-    "techcat": {
-      "name": "Pudding",
-      "bio": "Pudding is a full-stack mischief-maker, equally skilled at swatting at front-end UI elements and stealing warm laptop spots. She has an impeccable sense of timing, always demanding attention the moment an important meeting starts.",
-      "in_memoriam": false,
-      "photo": {
-        "alt": "Pudding the cat",
-        "height": 450,
-        "src": "/assets/cats/pudding.jpg",
-        "width": 450
-      }
-    },
-    "caretaker": {
-      "name": "Morgan Riley",
-      "urls": {
-        "website": "https://morganriley.dev",
-        "social": "https://hachyderm.io/@morganriley",
-        "github": "https://github.com/morganriley"
-      }
-    }
-  },
-  {
-    "id": 5,
-    "techcat": {
-      "name": "Nibbles",
-      "bio": "Nibbles is a cybersecurity expert, always testing the physical integrity of cables and headphone wires with his teeth. His passion for encryption is unmatched—he somehow manages to lock my laptop with a single well-placed paw press.",
-      "in_memoriam": false,
-      "photo": {
-        "alt": "Nibbles the cat",
-        "height": 450,
-        "src": "/assets/cats/nibbles.jpg",
-        "width": 450
-      }
-    },
-    "caretaker": {
-      "name": "Taylor Brooks",
-      "urls": {
-        "website": "https://taylorbrooks.dev",
-        "social": "https://hachyderm.io/@taylorbrooks",
-        "github": "https://github.com/taylorbrooks"
-      }
-    }
-  },
-  {
-    "id": 6,
-    "techcat": {
-      "name": "Marshmallow",
-      "bio": "Marshmallow believes in a balanced work-life approach, reminding me to take breaks by curling up on my lap for enforced cuddle time. He has a special talent for finding the coziest spots in the office, usually right on top of my mechanical keyboard.",
-      "in_memoriam": false,
-      "photo": {
-        "alt": "Marshmallow the cat",
-        "height": 450,
-        "src": "/assets/cats/marshmallow.jpg",
-        "width": 450
-      }
-    },
-    "caretaker": {
-      "name": "Jordan Smith",
-      "urls": {
-        "website": "https://jordansmith.dev",
-        "social": "https://hachyderm.io/@jordansmith",
-        "github": "https://github.com/jordansmith"
+        "website": "https://schalkneethling.com",
+        "social": "https://hachyderm.io/@schalkneethling",
+        "github": "https://github.com/schalkneethling"
       }
     }
   }

@@ -5,6 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechCats ~ The cats of people who make websites</title>
+
+  <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="TechCats">
+  <link rel="manifest" href="/assets/site.webmanifest">
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="TechCats">
+  <meta property="og:description" content="The cats of people who make websites.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techcats.netlify.app/">
+  <meta property="og:site_name" content="TechCats">
+  <meta property="og:image" content="https://techcats.netlify.app/social-share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="fediverse:creator" content="@schalkneethling@hachyderm.io">
+
   <link rel="stylesheet" type="text/css" href="/css/reset.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/css/techcats.css" media="screen">
 </head>
@@ -47,7 +67,6 @@
       color: var(--color-primary-brown);
       font-family: var(--typography-logo);
       font-size: var(--typography-font-size-logo);
-      margin-block-start: 0;
     }
 
     .subtitle {
@@ -57,6 +76,10 @@
     }
 
     @media screen and (width < 48rem) {
+      h1 {
+        margin-block-start: var(--size-24);
+      }
+
       .subtitle {
         inset: -1rem -1rem;
         max-inline-size: 14rem;
@@ -80,19 +103,26 @@
       --globe-inset-block-end: -4.5rem;
     }
   }
+
+  @media screen and (width >=64rem) {
+    .page-header {
+      h1 {
+        margin-block-start: 0;
+      }
+    }
+  }
 </style>
 
 
     <main>
       
 <div class="techcats-list-wrapper">
-  <button id="add-techcat" type="button" class="primary-button add-techcat" aria-expanded="false" aria-haspopup="dialog">Add Your
-  TechCat</button>
+  <button id="add-techcat" type="button" class="primary-button add-techcat" aria-expanded="false" aria-haspopup="dialog">Add Your TechCat</button>
 
-<dialog id="add-techcat-dialog" class="add-techcat-dialog">
+<dialog aria-labelledby="dialog-title-label" id="add-techcat-dialog" class="add-techcat-dialog">
   <form class="close-dialog-form" method="dialog">
     <button type="submit" class="close-dialog">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"></path>
       </svg>
       <span class="visually-hidden">Close dialog</span>
@@ -100,7 +130,7 @@
   </form>
 
   <div class="dialog-content-wrapper">
-    <h2 class="dialog-title">Add Your TechCat</h2>
+    <h2 id="dialog-title-label" class="dialog-title">Add Your TechCat</h2>
     <form id="add-techcat-form" name="add-techcat" method="post">
       <fieldset>
         <legend>Techcat Details</legend>
@@ -148,10 +178,18 @@
           <input type="url" name="caretaker-github" id="caretaker-github">
         </div>
       </fieldset>
-      <button class="primary-button" type="submit">Add Your TechCat</button>
+      <button class="primary-button submit-techcat" type="submit">
+        <span class="add-techcat-initial">Add Your TechCat</span>
+        <span class="add-techcat-onsubmit" hidden="">Beaming TechCat</span>
+      </button>
     </form>
   </div>
 </dialog>
+
+<div class="add-techcat-success" id="add-techcat-success" popover="">
+  <h3>Thank you for submitting your TechCat!</h3>
+  <p>I will add them to the site soon. You can <a href="">follow progress on GitHub</a>.</p>
+</div>
 
 <style>
   .primary-button,
@@ -166,7 +204,6 @@
     border-radius: var(--size-48);
     color: var(--color-neutral-inverted);
     display: block;
-    font-size: var(--typography-font-size-small-medium);
     inline-size: max-content;
     justify-self: end;
     margin-block-end: var(--size-48);
@@ -187,15 +224,19 @@
     svg {
       block-size: calc(var(--icon-size) * 2);
       inline-size: calc(var(--icon-size) * 2);
+      fill: var(--color-primary-brown);
     }
   }
 
   .add-techcat-dialog:open {
+    background-color: var(--color-xlight-purple);
+    border: var(--border-dialog);
     display: grid;
-    border: var(--size-2) solid var(--color-primary-brown);
     grid-template-rows: auto 1fr;
+    outline: var(--outline-dialog);
     padding-block: var(--size-16);
     padding-inline: var(--size-32);
+    scrollbar-color: var(--color-primary-brown) var(--color-xlight-purple);
 
     &::backdrop {
       background-color: var(--color-backdrop);
@@ -206,29 +247,100 @@
     }
 
     .dialog-title {
+      color: var(--color-primary-brown);
+      font-family: var(--typography-logo);
+      font-size: var(--typography-font-size-xxl);
       margin: 0;
+      margin-block-end: var(--size-32);
     }
 
     fieldset {
+      background-color: var(--color-primary-surface);
       border: none;
-      margin-block-start: var(--size-16);
-      padding: 0;
+      margin-block: var(--size-16) var(--size-32);
     }
 
     legend {
+      background-color: var(--color-primary-brown);
+      color: var(--color-neutral-inverted);
       font-size: var(--typography-font-size-medium);
       margin-block-end: var(--size-16);
+      padding-block: var(--size-8);
+      padding-inline: var(--size-16);
+    }
+  }
+
+  .add-techcat-success {
+    color: var(--color-primary-brown);
+    padding: var(--size-16);
+    text-align: center;
+  }
+
+  .add-techcat-onsubmit:not([hidden]) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      display: block;
+      animation: dots 1s steps(5, end) infinite;
+    }
+  }
+
+  @keyframes dots {
+    0% {
+      content: "";
+    }
+
+    25% {
+      content: ".";
+    }
+
+    50% {
+      content: "..";
+    }
+
+    75% {
+      content: "...";
+    }
+
+    100% {
+      content: "";
     }
   }
 
   @media screen and (width < 48rem) {
-    .primary-button.add-techcat {
+    .primary-button {
       inline-size: 100%;
+      font-size: var(--typography-font-size-default);
     }
 
     .add-techcat-dialog {
       block-size: 100vh;
       inline-size: 100vw;
+    }
+
+    .add-techcat-dialog:open {
+      padding-block: var(--size-16);
+      padding-inline: var(--size-8);
+
+      .dialog-title {
+        font-size: var(--typography-font-size-large);
+      }
+
+      fieldset {
+        border-radius: calc(var(--border-radius-container) / 2);
+        padding-inline: var(--size-24);
+      }
+
+      legend {
+        font-size: var(--typography-font-size-default);
+      }
+    }
+
+    .add-techcat-success {
+      margin-inline: var(--size-16);
     }
   }
 
@@ -237,6 +349,21 @@
       block-size: 70vh;
       inline-size: 70vw;
     }
+
+    .add-techcat-dialog:open {
+      padding-block: var(--size-16);
+      padding-inline: var(--size-32);
+
+      fieldset {
+        border-radius: var(--border-radius-container);
+        padding-inline: var(--size-32);
+      }
+
+      .submit-techcat {
+        inline-size: 22rem;
+      }
+    }
+
   }
 
   @media screen and (width >=83.5rem) {
@@ -266,9 +393,21 @@
     updateAriaExpanded();
   });
 
+  function showSuccessPopover(data) {
+    const popover = document.getElementById('add-techcat-success');
+    const githubLink = popover.querySelector('a');
+    githubLink.href = data.issue;
+    popover.showPopover();
+  }
+
   addTechcatForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const endpoint = `${document.location.href}.netlify/functions/add-techcat`;
+    const buttonTxtInitial = document.querySelector('.add-techcat-initial');
+    const buttonTxtOnsubmit = document.querySelector('.add-techcat-onsubmit');
+
+    buttonTxtInitial.hidden = true;
+    buttonTxtOnsubmit.hidden = false;
 
     try {
       const response = await fetch(endpoint, {
@@ -278,6 +417,30 @@
 
       if (response.ok) {
         const responseData = await response.json();
+
+        buttonTxtInitial.hidden = false;
+        buttonTxtOnsubmit.hidden = true;
+
+        addTechcatForm.reset();
+
+        dialog.close();
+
+        if (confetti) {
+          confetti({
+            disableForReducedMotion: true,
+            particleCount: 300,
+            startVelocity: 45,
+            spread: 360,
+            orgin: {
+              x: 0.5,
+              y: 0,
+            },
+            zIndex: 1000,
+          });
+        }
+
+        showSuccessPopover(responseData);
+
         console.log(responseData);
       }
     } catch (error) {
@@ -291,11 +454,11 @@
     
     
     <li class="techcats-list-entry">
-      <a href="profile/1/luna" class="techcats-entry-name">
+      <a href="profile/1/miss-peregrine" class="techcats-entry-name">
         <figure>
-          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fluna.jpg&width=450&format=jpeg&via=transform" width="450" alt="Luna the cat"></picture>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fkitty.webp&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fkitty.webp&width=450&format=jpeg&via=transform" width="450" alt="A black and white cat mid-yawn, showing sharp teeth and tongue. Whiskers fan out, and the background shows a bed, dresser, and open door."></picture>
           <figcaption>
-            Luna
+            Miss Peregrine
           </figcaption>
         </figure>
       </a>
@@ -303,11 +466,11 @@
     
     
     <li class="techcats-list-entry">
-      <a href="profile/2/milo" class="techcats-entry-name">
+      <a href="profile/2/salem" class="techcats-entry-name">
         <figure>
-          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fmilo.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fmilo.jpg&width=450&format=jpeg&via=transform" width="450" alt="Milo the cat"></picture>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fsalem.webp&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fsalem.webp&width=450&format=jpeg&via=transform" width="450" alt="A cat with a white face and dark markings lies on a pink blanket, gazing sleepily. The background shows a cozy room with curtains, shelves, and decor."></picture>
           <figcaption>
-            Milo
+            Salem
           </figcaption>
         </figure>
       </a>
@@ -315,47 +478,11 @@
     
     
     <li class="techcats-list-entry">
-      <a href="profile/3/whiskerpuff" class="techcats-entry-name">
+      <a href="profile/3/samurai" class="techcats-entry-name">
         <figure>
-          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fwhiskerpuff.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fwhiskerpuff.jpg&width=450&format=jpeg&via=transform" width="450" alt="Whiskerpuff the cat"></picture>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fsamurai.webp&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fsamurai.webp&width=450&format=jpeg&via=transform" width="450" alt="A ginger cat with bright amber eyes lounges comfortably in a woven basket bed lined with soft blankets. The cat has a calm, alert expression and is resting with its paws tucked under its body. "></picture>
           <figcaption>
-            Whiskerpuff
-          </figcaption>
-        </figure>
-      </a>
-    </li>
-    
-    
-    <li class="techcats-list-entry">
-      <a href="profile/4/pudding" class="techcats-entry-name">
-        <figure>
-          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fpudding.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fpudding.jpg&width=450&format=jpeg&via=transform" width="450" alt="Pudding the cat"></picture>
-          <figcaption>
-            Pudding
-          </figcaption>
-        </figure>
-      </a>
-    </li>
-    
-    
-    <li class="techcats-list-entry">
-      <a href="profile/5/nibbles" class="techcats-entry-name">
-        <figure>
-          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fnibbles.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fnibbles.jpg&width=450&format=jpeg&via=transform" width="450" alt="Nibbles the cat"></picture>
-          <figcaption>
-            Nibbles
-          </figcaption>
-        </figure>
-      </a>
-    </li>
-    
-    
-    <li class="techcats-list-entry">
-      <a href="profile/6/marshmallow" class="techcats-entry-name">
-        <figure>
-          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fmarshmallow.jpg&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fmarshmallow.jpg&width=450&format=jpeg&via=transform" width="450" alt="Marshmallow the cat"></picture>
-          <figcaption>
-            Marshmallow
+            Samurai
           </figcaption>
         </figure>
       </a>
@@ -553,6 +680,7 @@
   }
 </style>
 
+  <script src="/assets/js/canvas-confetti.js"></script>
 </body>
 
 </html>
