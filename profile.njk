@@ -33,7 +33,7 @@ tags: techcats
   </div>
   <div class="techcats-profile-container">
     <div class="techcat-profile-image">
-      <img class="techcats-photo {{ 'in-memoriam' if inMemoriam }}" src="{{ photoSrc }}" height="{{ photoHeight }}"
+      <img class="techcats-photo {{ 'in-memoriam' if inMemoriam  === 'true' }}" src="{{ photoSrc }}" height="{{ photoHeight }}"
         width="photoWidth" alt="{{ photoAlt }}">
     </div>
     <div class="primary-content-container">
