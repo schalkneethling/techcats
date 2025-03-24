@@ -9,8 +9,11 @@
 :root {
   --border-dialog: var(--size-6) solid var(--color-primary-brown);
   --outline-dialog: var(--size-6) solid var(--color-xlight-purple);
+  --outline-in-memoriam: var(--size-12) solid var(--color-primary-highlight);
 
   --border-radius-container: 2.625rem;
+
+  --box-shadow-in-memoriam: 9px 6px 3px #734a72;
 
   --color-light-green: #caefd7;
   --color-light-purple: #c7bff5;

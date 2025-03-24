@@ -86,5 +86,26 @@
         "github": "https://github.com/ttntm"
       }
     }
+  },
+  {
+    "id": 5,
+    "techcat": {
+      "name": "Poocha",
+      "bio": "Poocha (പൂച്ച in Malaylam), was not your typical cuddly cat — he made it very clear that affection was on his terms only. Any attempt at snuggles was met with a swift and merciless scratch, a reminder that love must be earned, not forced. A true master of relaxation, he spent most of his days napping in the warmest spots he could find, only taking breaks to bring us the occasional “gift” in the form of an unfortunate mouse. With his signature don’t care attitude, he ruled the house with quiet authority, never once bothering to impress anyone—but somehow managing to steal our hearts anyway. Rest well, Poocha. May there be endless naps and no unwanted cuddles wherever you are.",
+      "in_memoriam": true,
+      "photo": {
+        "alt": "A ginger cat sleeps peacefully, curled up with its eyes closed and paws tucked in, resting on a floral-patterned fabric.",
+        "height": 450,
+        "src": "/assets/cats/poocha.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "D34dMan",
+      "urls": {
+        "website": "https://www.d34dman.com",
+        "github": "https://github.com/d34dman"
+      }
+    }
   }
 ]
