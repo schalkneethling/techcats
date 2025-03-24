@@ -39,7 +39,7 @@ tags: techcats
     <div class="primary-content-container">
       <section aria-labelledby="section-techcat-profile" class="techcat-profile-details">
         <h1 class="techcat-profile-name" id="section-techcat-profile">{{ techcatName }}</h1>
-        {% if inMemoriam %}
+        {% if inMemoriam  === "true" %}
           <p class="in-memoriam-wrapper">In loving memory</p>
         {% endif %}
         <p>{{ techcatBio | safe }}</p>
