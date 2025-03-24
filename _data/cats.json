@@ -64,5 +64,27 @@
         "github": "https://github.com/schalkneethling"
       }
     }
+  },
+  {
+    "id": 4,
+    "techcat": {
+      "name": "Alfi",
+      "bio": "Alfi is a ginger Persian cat and the undisputed king of our small household. He was born a year before the pandemic and came to us as a 3 month old kitten. That's probably why he became very attached to his human subjects. When he's not taking royal naps, often in most peculiar positions, he enjoys exploring his kingdom and playing with almost anything that isn't a cat toy. His favourites include packaging material, zip ties, and cables.",
+      "in_memoriam": false,
+      "photo": {
+        "alt": "A ginger cat with bright amber eyes lies comfortably on top of the pillows of a sofa. The cat looks sleepy and is resting with its paws tucked under its body and on the backside of the sofa. ",
+        "height": 450,
+        "src": "/assets/cats/alfi.jpg",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "Tom",
+      "urls": {
+        "website": "https://ttntm.me",
+        "social": "https://fosstodon.org/@ttntm",
+        "github": "https://github.com/ttntm"
+      }
+    }
   }
 ]
