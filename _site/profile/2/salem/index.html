@@ -462,11 +462,14 @@
   </div>
   <div class="techcats-profile-container">
     <div class="techcat-profile-image">
-      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fsalem.webp&width=900&format=webp&via=transform 900w"><img class="techcats-photo" src="/.11ty/image/?src=assets%2Fcats%2Fsalem.webp&width=900&format=jpeg&via=transform" height="900" width="900" alt="A cat with a white face and dark markings lies on a pink blanket, gazing sleepily. The background shows a cozy room with curtains, shelves, and decor."></picture>
+      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fsalem.webp&width=900&format=webp&via=transform 900w"><img class="techcats-photo in-memoriam" src="/.11ty/image/?src=assets%2Fcats%2Fsalem.webp&width=900&format=jpeg&via=transform" height="900" width="900" alt="A cat with a white face and dark markings lies on a pink blanket, gazing sleepily. The background shows a cozy room with curtains, shelves, and decor."></picture>
     </div>
     <div class="primary-content-container">
       <section aria-labelledby="section-techcat-profile" class="techcat-profile-details">
         <h1 class="techcat-profile-name" id="section-techcat-profile">Salem</h1>
+        
+          <p class="in-memoriam-wrapper">In loving memory</p>
+        
         <p>Salem, Miss Peregrine&#39;s distinguished offspring, carries himself with the quiet elegance befitting his lineage. His snowshoe coat and mesmerizing blue eyes make him a vision of feline beauty, drawing admiring glances but rarely seeking attention. This reserved gentleman saves his rare but treasured purrs for special occasions, turning each rumble into a memorable event worth celebrating. While he generally keeps to himself, Salem has formed an unbreakable bond with our youngest daughter, his chosen human. Nothing brings him more joy than a small bowl of milk, which he savors with delicate appreciation. Though not one for the spotlight, this soft, cuddly sweetheart brings a gentle presence to the household tech scene, offering silent companionship to our daughter as she navigates the digital world.</p>
       </section>
       <section aria-labelledby="section-techcat-caretaker" class="techcat-profile-caretaker">
@@ -548,12 +551,26 @@
     max-inline-size: var(--max-container-inline-size);
   }
 
+  .in-memoriam-wrapper {
+    background-color: var(--color-primary-highlight);
+    color: var(--color-primary-brown);
+    font-size: var(--typography-font-size-default);
+    margin-block: var(--size-8);
+    padding-block: var(--size-8);
+    padding-inline-start: var(--size-12);
+  }
+
   .techcats-photo {
     block-size: auto;
     border-radius: 50%;
+
+    &.in-memoriam {
+      box-shadow: var(--box-shadow-in-memoriam);
+      outline: var(--outline-in-memoriam);
+    }
   }
 
-  .techcat-profile-details p:first-of-type,
+  .techcat-profile-details p:not(".in-memoriam-wrapper"):first-of-type,
   .techcat-profile-caretaker p:first-of-type {
     margin-block-start: 0;
   }

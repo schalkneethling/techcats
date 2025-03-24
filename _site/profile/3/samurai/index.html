@@ -462,11 +462,14 @@
   </div>
   <div class="techcats-profile-container">
     <div class="techcat-profile-image">
-      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fsamurai.webp&width=900&format=webp&via=transform 900w"><img class="techcats-photo" src="/.11ty/image/?src=assets%2Fcats%2Fsamurai.webp&width=900&format=jpeg&via=transform" height="900" width="900" alt="A ginger cat with bright amber eyes lounges comfortably in a woven basket bed lined with soft blankets. The cat has a calm, alert expression and is resting with its paws tucked under its body. "></picture>
+      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fsamurai.webp&width=900&format=webp&via=transform 900w"><img class="techcats-photo in-memoriam" src="/.11ty/image/?src=assets%2Fcats%2Fsamurai.webp&width=900&format=jpeg&via=transform" height="900" width="900" alt="A ginger cat with bright amber eyes lounges comfortably in a woven basket bed lined with soft blankets. The cat has a calm, alert expression and is resting with its paws tucked under its body. "></picture>
     </div>
     <div class="primary-content-container">
       <section aria-labelledby="section-techcat-profile" class="techcat-profile-details">
         <h1 class="techcat-profile-name" id="section-techcat-profile">Samurai</h1>
+        
+          <p class="in-memoriam-wrapper">In loving memory</p>
+        
         <p>Samurai, the fiery ginger warrior, joined the household with a legendary origin story—having faced down two Huskies before her rescue by neighborly heroes. This fearless feline brings vibrant energy to our home, with a mischievous spirit that finds particular joy in stalking Miss Peregrine through windows, much to the elder cat&#39;s dismay. Despite her fierce reputation, Samurai melts at the promise of a good scratch, frequently interrupting coding sessions by leaping onto my desk to demand immediate attention and cuddles. Her sudden keyboard inspections might seem like affection, but perhaps she&#39;s actually conducting rigorous code reviews, her amber eyes scanning for bugs with the same intensity she once faced down those canine adversaries. Equal parts tenacious fighter and loving companion, Samurai proves daily that the smallest packages often contain the boldest spirits.</p>
       </section>
       <section aria-labelledby="section-techcat-caretaker" class="techcat-profile-caretaker">
@@ -548,12 +551,26 @@
     max-inline-size: var(--max-container-inline-size);
   }
 
+  .in-memoriam-wrapper {
+    background-color: var(--color-primary-highlight);
+    color: var(--color-primary-brown);
+    font-size: var(--typography-font-size-default);
+    margin-block: var(--size-8);
+    padding-block: var(--size-8);
+    padding-inline-start: var(--size-12);
+  }
+
   .techcats-photo {
     block-size: auto;
     border-radius: 50%;
+
+    &.in-memoriam {
+      box-shadow: var(--box-shadow-in-memoriam);
+      outline: var(--outline-in-memoriam);
+    }
   }
 
-  .techcat-profile-details p:first-of-type,
+  .techcat-profile-details p:not(".in-memoriam-wrapper"):first-of-type,
   .techcat-profile-caretaker p:first-of-type {
     margin-block-start: 0;
   }

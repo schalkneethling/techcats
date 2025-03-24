@@ -462,11 +462,14 @@
   </div>
   <div class="techcats-profile-container">
     <div class="techcat-profile-image">
-      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fkitty.webp&width=900&format=webp&via=transform 900w"><img class="techcats-photo" src="/.11ty/image/?src=assets%2Fcats%2Fkitty.webp&width=900&format=jpeg&via=transform" height="900" width="900" alt="A black and white cat mid-yawn, showing sharp teeth and tongue. Whiskers fan out, and the background shows a bed, dresser, and open door."></picture>
+      <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fkitty.webp&width=900&format=webp&via=transform 900w"><img class="techcats-photo in-memoriam" src="/.11ty/image/?src=assets%2Fcats%2Fkitty.webp&width=900&format=jpeg&via=transform" height="900" width="900" alt="A black and white cat mid-yawn, showing sharp teeth and tongue. Whiskers fan out, and the background shows a bed, dresser, and open door."></picture>
     </div>
     <div class="primary-content-container">
       <section aria-labelledby="section-techcat-profile" class="techcat-profile-details">
         <h1 class="techcat-profile-name" id="section-techcat-profile">Miss Peregrine</h1>
+        
+          <p class="in-memoriam-wrapper">In loving memory</p>
+        
         <p>Queen of the household, Miss Peregrine commands respect with her elegant tuxedo coat and dignified demeanor. While she may appear standoffish at first glance, this senior feline harbors a heart of gold beneath her formal exterior. Her regal presence is so powerful that even the border collie knows better than to challenge her authority. When not supervising her domain from carefully selected perches, Ms Peregrine might grace a lucky human with her rare but meaningful displays of affection. A true tech companion who appreciates order and precision, she silently judges code quality from a distance while maintaining her aristocratic composure.</p>
       </section>
       <section aria-labelledby="section-techcat-caretaker" class="techcat-profile-caretaker">
@@ -548,12 +551,26 @@
     max-inline-size: var(--max-container-inline-size);
   }
 
+  .in-memoriam-wrapper {
+    background-color: var(--color-primary-highlight);
+    color: var(--color-primary-brown);
+    font-size: var(--typography-font-size-default);
+    margin-block: var(--size-8);
+    padding-block: var(--size-8);
+    padding-inline-start: var(--size-12);
+  }
+
   .techcats-photo {
     block-size: auto;
     border-radius: 50%;
+
+    &.in-memoriam {
+      box-shadow: var(--box-shadow-in-memoriam);
+      outline: var(--outline-in-memoriam);
+    }
   }
 
-  .techcat-profile-details p:first-of-type,
+  .techcat-profile-details p:not(".in-memoriam-wrapper"):first-of-type,
   .techcat-profile-caretaker p:first-of-type {
     margin-block-start: 0;
   }
