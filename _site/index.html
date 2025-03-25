@@ -442,17 +442,29 @@
         }
 
         showSuccessPopover(responseData);
-
-        console.log(responseData);
       }
     } catch (error) {
-      throw new Error(`Error: ${error.message}`);
+      if (Sentry) {
+        Sentry.captureException(error);
+      }
     }
 
   });
 </script>
 
   <ul class="techcats-list-container">
+    
+    
+    <li class="techcats-list-entry">
+      <a href="profile/6/bandit-2018-2021" class="techcats-entry-name">
+        <figure>
+          <picture><source type="image/webp" srcset="/.11ty/image/?src=assets%2Fcats%2Fbandit.webp&width=450&format=webp&via=transform 450w"><img class="techcats-entry-image in-memoriam" height="450" src="/.11ty/image/?src=assets%2Fcats%2Fbandit.webp&width=450&format=jpeg&via=transform" width="450" alt="A grey and white cat sits next to a tablet with a keyboard, staring at code on the screen. The code has colorful syntax highlighting."></picture>
+          <figcaption>
+            Bandit (2018-2021)
+          </figcaption>
+        </figure>
+      </a>
+    </li>
     
     
     <li class="techcats-list-entry">
@@ -556,6 +568,7 @@
   .techcats-entry-image {
     block-size: auto;
     border-radius: 50%;
+    outline: var(--outline-profile-photo);
 
     &.in-memoriam {
       box-shadow: var(--box-shadow-in-memoriam);
