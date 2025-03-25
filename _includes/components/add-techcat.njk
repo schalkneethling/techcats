@@ -323,11 +323,11 @@
         }
 
         showSuccessPopover(responseData);
-
-        console.log(responseData);
       }
     } catch (error) {
-      throw new Error(`Error: ${error.message}`);
+      if (Sentry) {
+        Sentry.captureException(error);
+      }
     }
 
   });
