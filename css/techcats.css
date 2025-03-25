@@ -9,6 +9,8 @@
 :root {
   --border-dialog: var(--size-6) solid var(--color-primary-brown);
   --outline-dialog: var(--size-6) solid var(--color-xlight-purple);
+
+  --outline-profile-photo: var(--size-12) solid var(--color-primary-brown);
   --outline-in-memoriam: var(--size-12) solid var(--color-primary-highlight);
 
   --border-radius-container: 2.625rem;

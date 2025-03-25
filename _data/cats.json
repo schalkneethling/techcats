@@ -91,7 +91,7 @@
     "id": 5,
     "techcat": {
       "name": "Poocha",
-      "bio": "Poocha (പൂച്ച in Malaylam), was not your typical cuddly cat — he made it very clear that affection was on his terms only. Any attempt at snuggles was met with a swift and merciless scratch, a reminder that love must be earned, not forced. A true master of relaxation, he spent most of his days napping in the warmest spots he could find, only taking breaks to bring us the occasional “gift” in the form of an unfortunate mouse. With his signature don’t care attitude, he ruled the house with quiet authority, never once bothering to impress anyone—but somehow managing to steal our hearts anyway. Rest well, Poocha. May there be endless naps and no unwanted cuddles wherever you are.",
+      "bio": "Poocha (പൂച്ച in Malaylam), was not your typical cuddly cat — he made it very clear that affection was on his terms only. Any attempt at snuggles was met with a swift and merciless scratch, a reminder that love must be earned, not forced. A true master of relaxation, he spent most of his days napping in the warmest spots he could find, only taking breaks to bring us the occasional “gift” in the form of an unfortunate mouse. With his signature don't care attitude, he ruled the house with quiet authority, never once bothering to impress anyone—but somehow managing to steal our hearts anyway. Rest well, Poocha. May there be endless naps and no unwanted cuddles wherever you are.",
       "in_memoriam": true,
       "photo": {
         "alt": "A ginger cat sleeps peacefully, curled up with its eyes closed and paws tucked in, resting on a floral-patterned fabric.",
@@ -105,6 +105,27 @@
       "urls": {
         "website": "https://www.d34dman.com",
         "github": "https://github.com/d34dman"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "techcat": {
+      "name": "Bandit (2018-2021)",
+      "bio": "A big gentle cat who didn't bite if you annoyed him (he'd just put his teeth on your hand to let you know he could if he wanted to), was the only cat I knew who didn't meow (just chirped), knew how fidget spinners work, kind of understood the concept of mirrors (probably didn't recognize himself, like some primates/dolphins/elephants do, but knew some things in the mirror are actually happening behind him), was incredibly loving and affectionate, and an impressively high jumper for his size which he used to show off whenever I'd stick a red suction cup on the wall (just one of his many party tricks). Bandy helped me get through some very dark times and was by my side every single day for the first year and a half of the Covid pandemic. He lived with us for 1174 days.",
+      "in_memoriam": true,
+      "photo": {
+        "alt": "A grey and white cat sits next to a tablet with a keyboard, staring at code on the screen. The code has colorful syntax highlighting.",
+        "height": 450,
+        "src": "/assets/cats/bandit.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "Stefan Matei",
+      "urls": {
+        "social": "https://bsky.app/profile/stefanmatei.com",
+        "github": "https://github.com/nonsalant/"
       }
     }
   }
