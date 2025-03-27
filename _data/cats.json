@@ -128,5 +128,25 @@
         "github": "https://github.com/nonsalant/"
       }
     }
+  },
+  {
+    "id": 7,
+    "techcat": {
+      "name": "Baxter",
+      "bio": "my companion through thick and thin. a kind boy who loves me very much. favorite hobbies include boxes, napping, and pets. big fan of being brushed as well.",
+      "in_memoriam": false,
+      "photo": {
+        "alt": "A close-up of a grey tabby cat with greenish-yellow eyes, gazing intently. Its ears are perked up, and its whiskers are prominent.",
+        "height": 450,
+        "src": "/assets/cats/baxter.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "emma",
+      "urls": {
+        "website": "https://emmas.place"
+      }
+    }
   }
 ]
