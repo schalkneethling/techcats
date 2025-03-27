@@ -148,5 +148,26 @@
         "website": "https://emmas.place"
       }
     }
+  },
+  {
+    "id": 8,
+    "techcat": {
+      "name": "Nanina (2010-2025)",
+      "bio": "Nanina was a retired princess warrior, that spread her magic anywhere she went and who chose to spend her last years in the peace of her house in the countryside of Portugal, leaving behind her many years of terrorising unsuspecting legs. She had befriended chickens, sheep and ants, but hated other cats and baths. The love of her life had been her brother Aquiles, a pit bull that thought he was a cat. She was a very work-oriented cat, dividing her days between her various hour long naps, and protecting us and the house with her multiple outdoor patrols. She was a renowned snorer, and could sense any hand approaching her, always releasing her signature sound (a turtledove-like sound with a “hmm!!”) that would let them know that she was always on watch, always on high alert! Awake she was a lady warrior on a mission, always with a not amused expression; asleep she would always gift us with her smiley face. She ruled the house and our hearts, sneakily manipulating everyone with her cuteness into giving her more food and snacks. She was a great assistant and cheerleader, providing us background snores from her beanbag, while we were working on our computers.",
+      "in_memoriam": true,
+      "photo": {
+        "alt": "A ginger tabby cat lounges on a textured rug, bathed in sunlight. Its green eyes gaze off to the side, with a green potted plant in the background.",
+        "height": 450,
+        "src": "/assets/cats/nanina.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "Joana, Christian (and part-time Tiago)",
+      "urls": {
+        "social": "https://bsky.app/profile/hejchristian.com",
+        "website": "https://www.hejchristian.com/"
+      }
+    }
   }
 ]
