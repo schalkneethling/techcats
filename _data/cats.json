@@ -169,5 +169,26 @@
         "website": "https://www.hejchristian.com/"
       }
     }
+  },
+  {
+    "id": 9,
+    "techcat": {
+      "name": "Tommi Girl",
+      "bio": "Tommi Girl is a proud Nebelung, a pedigree breed known for their long, luxurious coats, emerald-green eyes, and graceful presence. With her serene temperament and an eye for clean code, Tommi has taken her rightful place as Graceful Web Studio’s Chief Purrformance Officer. When she’s not lounging regally on the mouse pad (yes, that mouse pad—with your project on screen), she’s lending a paw in Webflow builds, inspecting semantic HTML, and advocating for digital inclusion. Tommi believes that every corner of the World Wide Web should be paw-sitively accessible to all. Her favorite things include: 🖱️ Sitting directly on your mouse when you're trying to work, 🌞 Long catnaps in sun-drenched windows, 💻 Purring loudly during client calls, 🐈 Declaring \"all websites need more alt text—and tuna!\". She’s not just a tech cat, she’s a meowdel of inclusive design.",
+      "in_memoriam": false,
+      "photo": {
+        "alt": "A fluffy gray cat sits on a pink polka-dot mouse pad in front of a computer monitor displaying a chat conversation.",
+        "height": 450,
+        "src": "/assets/cats/tommi-girl.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "Crystal Scott, CPWA",
+      "urls": {
+        "social": "https://www.linkedin.com/in/crystal-scott-cpwa-3b1875199/",
+        "website": "https://www.gracefulwebstudio.com/"
+      }
+    }
   }
 ]
