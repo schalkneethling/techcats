@@ -190,5 +190,27 @@
         "website": "https://www.gracefulwebstudio.com/"
       }
     }
+  },
+  {
+    "id": 10,
+    "techcat": {
+      "name": "Morpheus (2013-2025)",
+      "bio": "Morpheus was a chilled out, lazy cat who loved nothing more than sleeping on a duvet like a fancy prince.",
+      "in_memoriam": true,
+      "photo": {
+        "alt": "Black and white cat lying on a bed with colorful butterfly-patterned sheets, against a pink curtain and grey headboard background.",
+        "height": 450,
+        "src": "/assets/cats/morpheus.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "Robb Knight",
+      "urls": {
+        "github": "https://github.com/rknightuk",
+        "social": "https://social.lol/@robb",
+        "website": "https://rknight.me"
+      }
+    }
   }
 ]
