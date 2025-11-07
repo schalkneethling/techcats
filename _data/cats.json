@@ -212,5 +212,27 @@
         "website": "https://rknight.me"
       }
     }
+  },
+  {
+    "id": 11,
+    "techcat": {
+      "name": "Pünktchen",
+      "bio": "Pünktchen began as a reserved cat but is now extremely affectionate and observant. She enjoys sunbathing and produces distinctive purring sounds resembling a coffee machine brewing coffee. This charming feline is less vocal than her sister, preferring to communicate through her unique mechanical purr and watchful presence.",
+      "in_memoriam": false,
+      "photo": {
+        "alt": "A cat named Pünktchen relaxing in a sunny spot, displaying her affectionate and observant nature.",
+        "height": 450,
+        "src": "/assets/cats/punktchen.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "Thorsten Beeck",
+      "urls": {
+        "website": "https://thorstenbeeck.com/",
+        "social": "https://bsky.app/profile/thorstenbeeck.com",
+        "github": "https://github.com/thorstenbeeck"
+      }
+    }
   }
 ]
