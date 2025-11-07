@@ -212,5 +212,49 @@
         "website": "https://rknight.me"
       }
     }
+  },
+  {
+    "id": 11,
+    "techcat": {
+      "name": "Pünktchen",
+      "bio": "Pünktchen began as a reserved cat but is now extremely affectionate and observant. She enjoys sunbathing and produces distinctive purring sounds resembling a coffee machine brewing coffee. This charming feline is less vocal than her sister, preferring to communicate through her unique mechanical purr and watchful presence.",
+      "in_memoriam": false,
+      "photo": {
+        "alt": "A cat named Pünktchen relaxing in a sunny spot, displaying her affectionate and observant nature.",
+        "height": 450,
+        "src": "/assets/cats/puenktchen.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "Thorsten Beeck",
+      "urls": {
+        "website": "https://thorstenbeeck.com/",
+        "social": "https://bsky.app/profile/thorstenbeeck.com",
+        "github": "https://github.com/thorstenbeeck"
+      }
+    }
+  },
+  {
+    "id": 12,
+    "techcat": {
+      "name": "Lilly",
+      "bio": "Lilly was a little daredevil from the start. She loves climbing to the highest possible place and has no fear of getting back down. She regularly attacks the bed's headboard and then comes looking for cuddles. This adventurous feline produces various vocalizations, particularly evident during her active play sessions.",
+      "in_memoriam": false,
+      "photo": {
+        "alt": "A cat named Lilly perched at a high vantage point, showcasing her fearless climbing abilities.",
+        "height": 450,
+        "src": "/assets/cats/lilly.webp",
+        "width": 450
+      }
+    },
+    "caretaker": {
+      "name": "Thorsten Beeck",
+      "urls": {
+        "website": "https://thorstenbeeck.com/",
+        "social": "https://bsky.app/profile/thorstenbeeck.com",
+        "github": "https://github.com/thorstenbeeck"
+      }
+    }
   }
 ]
